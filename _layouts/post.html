@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<aside class="entry-info">
+  <div class="pubdate">published {{ page.date | date_to_string }}</div>
+</aside>
+<article>
+  <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+  {{ content }}
+  <hr />
+  <div id="disqus">  </div>
+</article>

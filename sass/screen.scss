@@ -2,21 +2,24 @@
 $gwidth : 25px; //grid cell width
 $gheight : 25px; //grid cell height
 
-$ffserif : Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+$ffserif : Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Hiragino Sans GB", /* SIGH */serif;
 $ffsans : Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, "Hiragino Sans GB", sans-serif;
 $ffmono : Monaco, "Lucida Console", monospace;
+$ffdatum: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
 
 $bfsize: 15px; //body font size
 $fsizeivl : 2px; //font size increment
 
 //text color
 
-$black: #113;
+$black: #334;
 $darkgrey: #333;
 $grey: #666;
 $lightgrey: #999;
 $verylightgrey: #ddd;
 $pblue: #003153;
+$sbrown: #86320D;
+
 
 body.wireframe {
   background: url(../img/basegrid.png); 
@@ -47,6 +50,10 @@ body{
   code, pre{
       font-family: $ffmono;
       font-size: $bfsize - $fsizeivl;
+  }
+
+  del{
+    color:$lightgrey;
   }
   
   h1, h2, h3, h4, h5, h6,
@@ -122,55 +129,83 @@ body{
   display: box;
   box-orient: horizontal;
 }
+
+@mixin transition-position{
+  -webkit-transition:all 1s ease-out;
+  -moz-transition:position 1s ease-out;
+  -o-transition:position 1s ease-out;
+  transition:position 1s ease-out;
+}
+
+@mixin roundborderbox{
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.33);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.33);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.33);
+}
+
 #container {
   @include flexbox;
+  background:#f2efea url(../img/eggshell.jpg) top left;
+
   #siteheader{
     width: $gwidth * (5 + 1);
     background: $pblue;
     padding-top: $gheight;
+    background:url(../img/headerbg.jpg) repeat-y center top;
     #sitename a{
       margin-left:$gwidth - 3px;
-      min-height:446px;
-      width:55px;
+      min-height:270px;
+      width:125px;
       text-indent:-32767px;
       display:block;
-      background:url(../img/header.png) no-repeat;
+      background:url(../img/header.png) no-repeat center bottom;
+      @include transition-position;
+      &:hover{
+        height:350px;
+        border:none;
+      }
     }
   }
   #main{
-  padding:$gheight 0 $gheight * 2 $gwidth;
-  width:($gwidth * 5 * 6) + ($gwidth * 7);
-  @include flexbox;
+    padding:$gheight 0 $gheight * 2 $gwidth;
+    width:($gwidth * 5 * 6) + ($gwidth * 7);
+    @include flexbox;
 
-  #blog-toc{
-    width: ($gwidth * 5 * 4) + ($gwidth * 3);
-    #qotd{
-      font-size: $bfsize * 2;
-      &.latin{
-        font-style: italic;
-        font-variant: small-caps;
-      }
-    }
-    ul{
-      padding-left:0;
-      li{
-        margin: $gheight 0;
-        height: $gheight;
-        .postdate{
-          display:inline-block;
-          min-width:$gwidth * 5;
-          text-align:right;
-          margin-right:$gwidth;
-          font-size: $bfsize * 0.8;
+    #blog-toc{
+      width: ($gwidth * 5 * 4) + ($gwidth * 3);
+      #qotd{
+        margin:$gheight * 2 0;
+        font-size: $bfsize * 2.5;
+        color: $lightgrey;
+        &.latin{
           font-style: italic;
-          color: $lightgrey;
-        }
-        .entrylink{
-          font-size: $bfsize * 1.2;
+          font-variant:small-caps;
         }
       }
-    }      
-  }
+      ul{
+        padding-left:0;
+        li{
+          margin: $gheight 0;
+          height: $gheight;
+          .postdate{
+            font-family:$ffdatum;
+            display:inline-block;
+            min-width:$gwidth * 5;
+            text-align:right;
+            margin-right:$gwidth;
+            font-size: $bfsize;
+            font-style: italic;
+            color:$sbrown;
+          }
+          .entrylink{
+            font-size: $bfsize * 1.2;
+          }
+        }
+      }      
+    }
   .entry-info{
       display:none;
       width: $gwidth * 5 - 1px;
@@ -213,6 +248,11 @@ body{
           color:$black;
         }
       }
+    }
+    .pic-comment{
+      display:block;
+      font-size:$bfsize * 0.8;
+      padding-left:$gwidth;
     }
   }//article
   .footnotes{

@@ -1,0 +1,31 @@
+//basic cell
+$gwidth : 25px; //grid cell width
+$gheight : 25px; //grid cell height
+
+$ffserif : Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Hiragino Sans GB", /* SIGH */serif;
+$ffsans : Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, "Hiragino Sans GB", sans-serif;
+$ffmono : Monaco, "Lucida Console", monospace;
+$ffdatum: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+
+$bfsize: 15px; //body font size
+$fsizeivl : 2px; //font size increment
+
+//text color
+
+$black: #334;
+$darkgrey: #333;
+$grey: #666;
+$lightgrey: #999;
+$verylightgrey: #ddd;
+$pblue: #003153;
+$sbrown: #86320D;
+
+#livefyre{
+  margin:$gheight 0 !important;
+  .lf_head_bar *, .lf_login_bar *, .lf_comment_form *{
+    font-family: $ffsans !important;
+  }
+  .lf_head_bar *{
+    color:$lightgrey !important;
+  }
+}

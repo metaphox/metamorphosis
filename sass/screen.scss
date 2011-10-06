@@ -146,15 +146,32 @@ body{
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.33);
 }
 
+@mixin bggradient{
+  background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(0,48,83) 80%, rgb(0,48,83) 100%);
+  background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(0,48,83) 80%, rgb(0,48,83) 100%);
+  background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(0,48,83) 80%, rgb(0,48,83) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(0,48,83) 80%, rgb(0,48,83) 100%);
+  background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(0,48,83) 80%, rgb(0,48,83) 100%);
+
+  background-image: -webkit-gradient(
+    linear, left bottom, left top,
+    color-stop(0, rgb(0,0,0)),
+    color-stop(0.8, rgb(0,48,83)),
+    color-stop(1, rgb(0,48,83))
+  );
+}
+
 #container {
   @include flexbox;
-  background:#f2efea url(../img/eggshell.jpg) top left;
+  background:#f2efea ;
+  background:url(../img/mainbglayer1.jpg) top left no-repeat, url(../img/eggshell.jpg) top left;
+  background: url(../img/eggshell.jpg) top left;
 
   #siteheader{
     width: $gwidth * (5 + 1);
     background: $pblue;
     padding-top: $gheight;
-    background:url(../img/headerbg.jpg) repeat-y center top;
+    background:url(../img/headerbg.jpg) repeat-y center bottom;
     #sitename a{
       margin-left:$gwidth - 3px;
       min-height:270px;
@@ -207,11 +224,7 @@ body{
       }      
     }
   .entry-info{
-      display:none;
-      width: $gwidth * 5 - 1px;
       min-height: $bfsize * 5;
-      padding: $gheight 0;
-      margin-left: - ($gwidth * 6);
       .date-year, .date-month, .date-weekday{
         line-height:1;
         display:block;
@@ -293,10 +306,32 @@ body{
 
 footer{
   min-height:$gheight * 15;
-  background:$pblue;
+  background:$pblue url(../img/footerbg.png) top left;
   color: $verylightgrey;
   padding:$gheight 0 $gheight $gwidth * 7;
   h2{
     margin-top:0;
+  }
+  nav#blogroll{
+    vertical-align:top;
+    h2{
+      display:relative;
+      top:0;
+    }
+    ul{
+      border-left:1px dotted $lightgrey;
+      margin:0;
+      display:inline-block;
+      min-width:149px;
+      li:hover{
+        list-style:disc;
+      }
+    }
+    a{
+      color:$verylightgrey;
+      &:hover{
+        color:#fff;
+      }
+    }
   }
 }

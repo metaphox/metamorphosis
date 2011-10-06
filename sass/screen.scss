@@ -195,8 +195,8 @@ body{
     @include flexbox;
 
     #blog-toc{
-      //width: ($gwidth * 5 * 4) + ($gwidth * 3);
       #qotd{
+        width: ($gwidth * 5 * 4) + ($gwidth * 3);
         margin:$gheight * 2 0;
         font-size: $bfsize * 2.5;
         color: $lightgrey;

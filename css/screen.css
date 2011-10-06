@@ -166,8 +166,9 @@ body br + a img {
   display: box;
   box-orient: horizontal;
 }
-/* line 199, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 #container #main #blog-toc #qotd {
+  width: 575px;
   margin: 50px 0;
   font-size: 37.5px;
   color: #999999;

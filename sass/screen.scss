@@ -101,7 +101,6 @@ body{
       color:$grey;
     }
     &:hover{
-      border-bottom: 1px dotted $black;
       color:$black;
     }
   }
@@ -276,9 +275,16 @@ body{
     h1{
       a{
         color:$pblue;
+        border:0;
         &:hover{
           color:$black;
         }
+      }
+    }
+    a{
+      border-bottom:1px dotted $grey;
+      &:hover{
+        border-bottom:1px solid $black;
       }
     }
     .pic-comment{
@@ -335,9 +341,10 @@ footer{
     margin-bottom: $gheight;
   }
   nav#blogroll, nav#existentials{
-    vertical-align:top;
+    h2{
+      height: $gheight;
+    }
     ul{
-      @include roundborderbox;
       @include transblack;
       padding:$gheight $gwidth;
       margin:0 $gwidth * 2 0 0;
@@ -355,18 +362,51 @@ footer{
     }
   }
   nav#existentials{
-    #twitter a{
-      background:url('../img/twitterlinkbg.png') top left no-repeat;
-      width:$gwidth * 6;
-      height:$gheight * 2;
+    //height: $gheight * 6;
+    line-height:0;
+    h2{
+      line-height:1; 
     }
-    li a{
-      display:block;
-      text-indent:-32767;
-      &:hover{
-        border:0;
-        background-position:0 -50px !important;
+    ul{
+      padding-bottom:0;
+      padding-right:0;
+      li:hover{
+        list-style:none;
       }
-    }
-  }
+      #github a{
+        background-position-x:-810px;
+      }
+      #flickr a{
+        background-position-x:-270px;
+      }
+      #twitter a{
+        background-position-x:-180px;
+      }
+      #facebook a{
+        background-position-x:-450px;
+      }
+      #linkedin a{
+        background-position-x:-900px;
+      }
+      li{
+        display:block;
+        float:left;
+        margin:0 $gwidth $gheight 0;
+        a{
+           background:url('../img/picons-social.png') top left no-repeat;
+           display:block;
+           height:$gheight * 2;
+           width:$gwidth * 2;
+           text-indent:-32767px;
+           &:hover{
+             border:0;
+             background-position-y:-59px !important;
+           }
+         }
+      }
+   /* li:last-of-type{
+         margin-right:$gwidth;
+      } */
+    }//ul
+  }//nav#existentials
 }

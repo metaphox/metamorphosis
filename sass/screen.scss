@@ -138,12 +138,14 @@ body{
 }
 
 @mixin roundborderbox{
+/*
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	box-shadow: 0 1px 0 rgba(255,255,255,0.05);
 	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.05);
 	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+    */
 }
 
 @mixin transblack{
@@ -329,12 +331,11 @@ footer{
   h2{
     margin-top:0;
   }
-  nav#blogroll{
+  nav{
+    margin-bottom: $gheight;
+  }
+  nav#blogroll, nav#existentials{
     vertical-align:top;
-    h2{
-      display:relative;
-      top:0;
-    }
     ul{
       @include roundborderbox;
       @include transblack;
@@ -350,6 +351,21 @@ footer{
       color:$verylightgrey;
       &:hover{
         color:#fff;
+      }
+    }
+  }
+  nav#existentials{
+    #twitter a{
+      background:url('../img/twitterlinkbg.png') top left no-repeat;
+      width:$gwidth * 6;
+      height:$gheight * 2;
+    }
+    li a{
+      display:block;
+      text-indent:-32767;
+      &:hover{
+        border:0;
+        background-position:0 -50px !important;
       }
     }
   }

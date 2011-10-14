@@ -196,6 +196,7 @@ body{
     @include flexbox;
 
     #blog-toc{
+      margin-bottom:$gheight;
       #qotd{
         width: ($gwidth * 5 * 4) + ($gwidth * 3);
         margin:$gheight * 2 0;
@@ -224,7 +225,7 @@ body{
           }
           .entrylink{
             font-size: $bfsize * 1.2;
-            max-width:($gwidth * 5 * 4) + ($gwidth * 7);
+            max-width:($gwidth * 5 * 3) + ($gwidth * 5);
             display:block;
             &:hover{
               border:0;

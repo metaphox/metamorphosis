@@ -1,4 +1,4 @@
 destination: public
 markdown: redcloth
-exclude: sass, build, test, config.rb
+exclude: sass, build, test, config.rb, public
 permalink: /post/:title

@@ -1,3 +1,4 @@
+destination: public
 markdown: redcloth
 exclude: sass, build, test, config.rb
 permalink: /post/:title

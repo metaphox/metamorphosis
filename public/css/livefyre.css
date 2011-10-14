@@ -1,0 +1,12 @@
+/* line 23, ../sass/livefyre.scss */
+#livefyre {
+  margin: 25px 0 !important;
+}
+/* line 25, ../sass/livefyre.scss */
+#livefyre .lf_head_bar *, #livefyre .lf_login_bar *, #livefyre .lf_comment_form * {
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, "Hiragino Sans GB", sans-serif !important;
+}
+/* line 28, ../sass/livefyre.scss */
+#livefyre .lf_head_bar * {
+  color: #999999 !important;
+}

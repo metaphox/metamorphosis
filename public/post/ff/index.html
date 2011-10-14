@@ -1,0 +1,183 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>纪念菲利克斯君 | Metamorphosis</title>
+  <meta name="description" content="Metaphox's personal blog">
+  <meta name="author" content="Metaphox">
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <!-- CSS: implied media=all -->
+  <!-- CSS concatenated and minified via ant build script-->
+  <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC|IM+Fell+DW+Pica+SC|Bowlby+One+SC' rel='stylesheet'>
+  <link rel="stylesheet" href="/metamorphosis/css/style.css">
+  <link rel="stylesheet" href="/metamorphosis/css/screen.css">
+  <link rel="stylesheet" href="/metamorphosis/css/disqus.css">
+  <!-- end CSS-->
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
+       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="/metamorphosis/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body class="nowireframe">
+  <div id="grid-columns">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+    <div id="container">
+    <header id="siteheader">
+	    <div id="sitename"><a href="/metamorphosis/">Metamorphosis</a></div/>
+    </header>
+    <div id="main" role="main">
+    <div id="wrapper">
+<article>
+  <h1><a href="/post/ff">纪念菲利克斯君</a></h1>
+  <p>
+【按】本文讲的不是<a href="http://blog.metaphox.name/post/felix">那只猫</a>。考虑到小心驶得万年船的古训，本文只用中文写成，除了菲利克斯·费德勒先生，其余人物均用化名。
+</p><p>
+菲利克斯·费德勒先生是公司数据库小组仅有的两个成员之一，一九七八年生，在公司工作了三年半。一个月前他给信息技术部门的所有同事发了一封电子邮件，告诉大家他两个月前已经提交了辞职申请，离开的时间确定为十月九号。这让大家觉得很突然，但是并不惊讶。
+</p><p>
+公司的创始人是旅行社发家，致富之后，建立了一家市场数据公司。一开始只做数据收集，工作量不大，某现已过气的国际商业机器公司系统即可全部搞定，网站也全都外包给别人做。后来公司渐渐发展，开始拥有自己的信息技术部门，而如果除去当时主管硬件、后来成为部门经理的米克·贾格尔先生，其时第一个、也是唯一一个部门成员，是科特·科本先生，他当时的头衔是「在线开发人员」。科特陆续开发了公司的若干网站，数据库用的是慕尼黑某软件公司的产品——后来被升阳电脑收购的那个免费数据库，那时还名不见经传，虽然现在名已不见经传的，是那个慕尼黑的软件公司。
+</p><p>
+后来创始人将公司的娱乐市场数据采集及处理业务剥离出来，作为与德国一家消费市场研究企业的联合投资，成立了我现在任职的这家公司。继而信息技术部的人渐渐多起来，对于数据库的要求也渐渐高起来。科特决定转向甲骨文数据库，问题是他没有任何相关经验。公司于是就聘请到了沃尔夫冈·阿马德乌斯先生，「指导」科特设计数据仓库，而差不多就是那个时候，菲利克斯君也加入公司，成为在线开发小组的人员。沃尔夫冈先生做了一个很有趣的设计：将数据仓库的主体分为结构完全一致的两块，甲和乙，但是甲拥有百分之八十的资源，乙只有百分之二十。不需要进行数据导入时，甲在线，乙离线，查询速度很快。需要进行数据导入时，甲离线进行数据导入，乙上线，查询速度变慢，甲导入完毕后重新切换上线，然后再将数据导入离线的乙。这个设计看似巧妙，实则于运行一段时间之后就会出现弊端——导入过程需要重复两次，耗时太久，出错几率增高，总有一部分资源被闲置，神谕的优化器无法完全工作，等等。大概是看到了自己的设计必将失败的凶兆，或者对面山头实在太过青绿的草色，沃尔夫冈先生后来离开了公司。在他离开之前，因为数据库部分问题重重，菲利克斯作为当时唯一有一些数据库背景的开发人员，也随之加入了数据库组。
+</p><p>
+背景介绍完毕，时间快进到二零零八年。在二月底的面试中，我已经认识过科特·科本先生，对他的印象是一位有着啤酒肚的摇滚青年。而愚人节我第一天上班时科特因病在家，米克大叔只是简单地指着菲利克斯君说，这是菲利克斯，数据库组的。我与菲利克斯握过手，敬畏地看着这个栗色头发几欲及肩，绿色眼睛咧着嘴笑的瘦高男生，喃喃地说，我很荣幸。从一楼到四楼，米克·贾格尔带着我拜过公司的各个山头，才让我回到座位上坐定，开始了我的职业生涯。那时我只是一个在大学里写过几行爪哇代码，无聊时喜欢鼓捣超文本链接语言和层叠样式表的毕业生，尚不知道「蛤蟆」软件为何物，也不知道什么是商业智能、索引优化和共享池缓存。甲骨文数据库对我来说是不折不扣的神谕，菲利克斯君在他的电脑上摆弄什么，我毫无概念。这种感觉很恐怖，我的意思是，作为一家以数据处理为主要业务之公司的一个试用期员工，我发现在那些简单到爆炸的表格标签和等宽文本文件之间，我对公司核心的工作原理和业务流程一无所知。
+</p><p>
+更恐怖的事情还在后面。我发现其实不止我，整个公司真正在细节层面上了解核心流程的只有两个人，而这两个人各自只知道一半。对于另一半系统在做什么，一方面因为两者是截然不同的世界，另一方面因为自己这一半的业务已经足够让人焦头烂额，两个人都毫无了解的兴趣。极端情况下，两者之中的任何一个若因某种不可抗力不幸挂点，公司就会陷入混乱，如果两者同时挂点，公司就可以解散了。信息技术部门没有任何文档，规范，指导原则之类的东西存在于公司里，大量的德·发科托（实质性的）和阿德·霍克（特定目的）解决方案散落于运行了许多年的壳脚本、报表程序生成器语言和存储过程中，其中许多已经因为岁月的流逝而变得神秘，超越了人类理性理解能力的范围。信息技术部门的产品是公司几乎所有利润的来源，但是公司的领导者对于信息技术部门提出的要求却始终视而不见——科特先生连续数年提出过参加神谕数据库的培训申请，都被管理层搁置。科特先生自嘲地在墙上印了两张甲骨文软件的证书，一张写着：科特·科本，甲骨文官方认证之神谕混乱协会成员；另一张则是：世界上首个由无证驾驶的巴士司机所设计的数据仓库。相比之下，楼下负责卖产品和客户沟通的市场部门，却可以得到他们想要的一切。
+</p><p>
+所以我入职之后同样没有得到任何公司内部的培训，也就成了顺理成章的事情。我不得不每天阅读八小时源代码，试图理清其中的脉络。但是许多时候我觉得自己孤立无援。科特·科本先生患有糖尿病，加上工作压力过大，脾气喜怒无常。高兴的时候我问他，他会做出简单的解释，不高兴的时候我问他，他只会告诉我不要管了，由他来搞定。我无可奈何，只能继续自己研究。某一天这样的事情又一次上演，在我去厨房倒咖啡的间隙，菲利克斯从后面跟上，叫住我，告诉我有什么数据库方面的问题也可以问他。
+</p><p>
+从此菲利克斯开始充当了我的导师角色，或者说，亦师亦友。从事过信息技术行业的同学应该明白，面对意大利面条式的混杂代码，来自知情者一两句简单的介绍可以省去自己许多毫无意义的折腾。如果这过去的六个月我由菲利克斯省去的折腾可以物质化，想必应是立方秒差距的体积。对于我愚蠢的问题，他总是耐心解释，对于我擅长的东西，他也会不停追问。除去工作上的问题，他也会告诉我，念「昨天」这个词的时候不要学周围的人翘舌，他们那样念是因为那是本地方言，以及德国跟伊朗、阿富汗这些国家的关系比较缓和，所以民众对遭受恐怖袭击的担心并不高之类与工作无关的事情。米克大叔、科特、菲利克斯和我总会于周五下班后在厨房里喝啤酒闲聊，偶尔会升级到一起去城区的啤酒馆继续喝到深夜。这样的细节让我的存在感和社交技能得以延续发展，没有蜕变成一个彻底的宅男。后来有一天我在看拍卖网站，菲利克斯问我想要买什么，我说我想把自己的尼康相机卖掉。菲利克斯说他也对摄影颇有兴趣，我们就此讨论了几天。最终菲利克斯决定买下我的相机，我也很高兴我的尼康可以托付给一个认识的人。菲利克斯说零五年他曾经作为背包客走过新马泰，希望今年可以有机会带着这台相机去别的地方。当时我只是简单地将其理解为一个愿望，没想到他其实已经是在打算离开公司之后将要做的事。
+</p><p>
+临走前的一周菲利克斯集中精力对付他最后的若干任务之一，将日本的销售数据导入神谕。鉴于我来自天朝，有远东语文识别能力，组织上安排我协助他将日本方面的工业标准编码转为通用字符集。这一工作远没有我想像的轻松，细节上的问题总是会出其不意地绊倒我们，而且科特·科本碰巧去希腊渡假，菲利克斯必须将他的承担过来。我们两个每天都在办公室里呆到接近八点钟，离开的时候公司连清洁工都下班了。但是这一周我过得非常充实，每天都能学到新东西，不仅仅是技术上的。菲利克斯到最后也认识了片假名若干，一起去中餐馆吃饭的时候还指着墙上的日文菜单说，卡塔卡纳。
+</p><p>
+到周一，那个项目终于完事大吉。开完碰头会，科特·科本拉住我，问我可否去给菲利克斯君集资，买个小礼物。我说当然可以，信封和卡片在哪里？科特·科本说我们还没有准备，让我先去把付了钱的人名都记下来，买了卡片再补上。我心中狂奋特，但还是答应了下来。收下五欧元，记下两个人名之后，哥特美眉让我去找公司老板的秘书解决一下卡片的问题，我依言前往，结果两个秘书都只有生日快乐和葬礼的卡片。正没理会处，秘书之一决定上网找图片自己印在卡纸上，问我能否代为信息技术部门想一些什么有特色的东西写上。我想了想，写下了：选择 星号 从 主干表 哪里 曲目标题 类似 再见。
+</p><p>
+再见，再见。周三下班又只剩我和菲利克斯两人，索性又跑到厨房喝酒。周四下班的送别会上，那张硬卡纸背面已经布满了签名，科特·科本把它封塑，然后送给了菲利克斯。大家都来了，吃吃喝喝，说说笑笑，然后又都离开。到最后剩下我、菲利克斯、科特·科本、圣-洛朗和苏珊·卡尔文。喝到十一点，啤酒都没了，苏珊回家，科特情绪崩溃。我们四个向市中心进发，菲利克斯问我可知道哪个酒吧还开着，我说，我家门口那个。
+</p><p>
+我们在我家门口的皮埃尔酒吧喝到凌晨两点。老板说，听你们说话都是搞计算机的么，在哪里高就？我们说哪哪哪。老板说，哦，可认识米克·贾格尔先生，他是我的老朋友？我们绝倒，说那是我们的领导。老板说为什么从来没见过你们？菲利克斯指着我说这要怪他，他就住在酒馆对面，可是直到今天才带我们来。老板说那以后可要常来，我们几个相视而笑。三点钟，四个人终于都趴下了，菲利克斯决定去我家睡觉，科特则执意要回家，让我指给他奥古斯都广场在哪里，他打电话给媳妇，让她来接他。我不放心他，就远远跟着，盯着他一路踉跄蹒跚兼调戏路人，最后一屁股在奥古斯都的公车站长椅上坐下。过了几分钟她媳妇开车来了，我才折回到家里，腾出别人丢家具时捡来的床垫，将一个月想洗却都忘记洗的床罩套上，让菲利克斯睡下。
+</p><p>
+周五九点我们醒来，挣扎着去公司上班。我浑身脱水，关节剧痛，菲利克斯却像没事人似的，直到中午才声称自己有轻微的头痛。下午他开始收拾东西，留给我一张过两小时就会失效的名片，一支印了超文本处理器语言图标的圆珠笔，和一副只有一个耳朵出声的破耳机。我不忍面对送他抱着盒子上车的场面，早早与他道别，逃回家里。
+</p>
+  <hr />
+  <div id="disqus">  </div>
+</article>
+<aside class="entry-info">
+  <div class="pubdate">published 10 Oct 2009</div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'metaphoxite'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+  
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</aside>
+</div>
+
+    </div><!--//#main-->
+  </div> <!--! end of #container -->
+  <footer>
+   <nav id="existentials">
+  <h2>Existentials</h2>
+  <ul>
+    <li id="github"><a href="https://github.com/metaphox">github</a></li>
+    <li id="flickr"><a href="http://www.flickr.com/photos/lonelyfox/">flickr</a></li>
+    <li id="twitter"><a href="https://twitter.com/#!/metaphox">twitter</a></li>
+    <li id="facebook"><a href="http://www.facebook.com/metaphox">facebook</a></li>
+    <li id="linkedin"><a href="http://www.linkedin.com/pub/tao-wu/20/296/930">linkedin</a></li>
+  </ul>
+</nav>
+<nav id="blogroll">
+  <h2>Blogroll</h2>
+  <ul id="group1">
+    <li><a href="http://wondermore.blogspot.com/" rel="friend met" title="a.k.a. did">wonderfulmore</a></li>
+    <li><a href="http://zixiaoshu.spaces.live.com/" rel="friend met" title="亮子">北京人在悉尼</a></li>
+    <li><a href="http://sukie_zhao.blog.tianya.cn" rel="fiend met" title="为晴雪所洗">sukie赵</a></li>
+    <li><a href="http://www.cjpanda.com/life/" rel="friend met" title="the CJ.">cjPanda</a></li>
+    <li><a href="http://biantaishabi.com/blog/" rel="friend" title="变态傻逼">btsb</a></li>
+    <li><a href="http://hsiaoweichan.blogspot.com/" rel="" title="friend met">vivian</a></li>
+    <li><a href="http://cityyoho.blogbus.com/" rel="friend met" title="灭绝">cityyoho</a></li>
+  </ul><ul id="group2">
+    <li><a href="http://weblog.bororo.org/" rel="acquaintance" >maple</a></li>
+    <li><a href="http://tianjintianjin.yculblog.com/" rel="friend met" title="猜错的大多数">tulip</a></li>
+    <li><a href="http://tankliang.blogbus.com/" rel="friend" >坦克梁</a></li>
+    <li><a href="http://hi.baidu.com/stone9" rel="friend" title="goddamner">stone</a></li>
+    <li><a href="http://hi.baidu.com/pavements84" rel="friend met" title="老妹">pavements</a></li>
+    <li><a href="http://blog.sinzy.net/changke" rel="friend met" title="天魔的家">问号鱼</a></li>
+    <li><a href="http://gilbertbeilschmidt.blog124.fc2.com/" rel="friend" title="小章鱼">Schlaraffenland</a></li>
+  </ul><ul id="group3">
+    <li><a href="http://www.post-concrete.com/blog/" rel="friend" title="Institute of East Asiatic Venomology">東亞毒液學研究所</a></li>
+    <li><a href="http://asukashinjirei.blogbus.com/" rel="friend" title="杨不风">草木贲华</a></li>
+    <li><a href="http://www.upshine.net/blog/" rel="friend met" title="Rex">三楼的卡西欧计算器</a></li>
+    <li><a href="http://kornephoros.de/" rel="friend" title="天市右垣一">追忆吹水年华</a></li>
+    <li><a href="http://k1oe.me/" rel="friend" title="Chloe">bad habits die hard</a></li>
+    <li><a href="http://howlongisnow.com/" rel="friend" title="大头怪阿姨">多说无益</a></li>
+    <li><a href="http://lawrence.li/blog/" rel="friend" title="Lawrence Li">一天世界</a></li>
+  </ul>
+</nav><!--/#blogroll-->
+ 
+  </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/metamorphosis/js/libs/jquery-1.6.2.min.js"><\/script>');</script>
+
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="/metamorphosis/js/plugins.js"></script>
+  <script defer src="/metamorphosis/js/script.js"></script>
+  <!-- end scripts-->
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <script>/*
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    }); */
+  </script>
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>

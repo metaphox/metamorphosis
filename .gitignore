@@ -1,4 +1,6 @@
 .sass-cache
 test
 build
+_site
+public
 *.swp

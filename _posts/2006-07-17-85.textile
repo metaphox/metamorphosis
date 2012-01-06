@@ -1,7 +1,6 @@
 --- 
 layout: post
-title: !binary |
-  Rm9455qE5pGE5b2x5YWl6Zeo5oyH5byV
+title: Fox的摄影入门指引
 
 ---
 for stone.

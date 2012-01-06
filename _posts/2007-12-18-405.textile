@@ -1,7 +1,6 @@
 --- 
 layout: post
-title: !binary |
-  55CQ5LqLNA==
+title: 琐事4
 
 ---
 工作两周了，有不少感受。

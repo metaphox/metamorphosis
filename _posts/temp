@@ -1,62 +1,4 @@
-<!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/b/378 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title>Yet Another Awkward Predicament | Metamorphosis</title>
-  <meta name="description" content="Metaphox's personal blog">
-  <meta name="author" content="Metaphox">
-
-  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
-  <!-- CSS: implied media=all -->
-  <!-- CSS concatenated and minified via ant build script-->
-  <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC|IM+Fell+DW+Pica+SC|Bowlby+One+SC' rel='stylesheet'>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/screen.css">
-  <link rel="stylesheet" href="/css/disqus.css">
-  <!-- end CSS-->
-
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
-       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
-       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="/js/libs/modernizr-2.0.6.min.js"></script>
-</head>
-
-<body class="nowireframe">
-  <div id="grid-columns">
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-  </div>
-    <div id="container">
-    <header id="siteheader">
-	    <div id="sitename"><a href="/">Metamorphosis</a></div/>
-    </header>
-    <div id="main" role="main">
-    <nav id="blog-toc">
-<h1>Table of Contents</h1>
-<blockquote id="qotd" class="latin">Horas non numero nisi serenas.</blockquote>
-<ul id="toc-list">
-  <li><span class="postdate">22 Dec 2011</span> <a class="entrylink" href="/post/misc-27">琐事26</a></li>
+<li><span class="postdate">22 Dec 2011</span> <a class="entrylink" href="/post/misc-27">琐事26</a></li>
   <li><span class="postdate">29 Nov 2011</span> <a class="entrylink" href="/post/misc-26">琐事26</a></li>
   <li><span class="postdate">29 Oct 2011</span> <a class="entrylink" href="/post/20111029">1029</a></li>
   <li><span class="postdate">06 Oct 2011</span> <a class="entrylink" href="/post/steve-jobs">帮主走好</a></li>
@@ -137,7 +79,7 @@
   <li><span class="postdate">22 Aug 2007</span> <a class="entrylink" href="/post/359">论文转载：一个新PKI算法</a></li>
   <li><span class="postdate">13 Aug 2007</span> <a class="entrylink" href="/post/358">高精灵之挽歌</a></li>
   <li><span class="postdate">23 Jul 2007</span> <a class="entrylink" href="/post/354">Flags</a></li>
-  <li><span class="postdate">22 Jul 2007</span> <a class="entrylink" href="/post/353">星际争霸二新兵种资料：黄昏执政官 5a6Y</a></li>
+  <li><span class="postdate">22 Jul 2007</span> <a class="entrylink" href="/post/353">星际争霸二新兵种资料：黄昏执政官</a></li>
   <li><span class="postdate">10 Jul 2007</span> <a class="entrylink" href="/post/352">无题</a></li>
   <li><span class="postdate">10 Jul 2007</span> <a class="entrylink" href="/post/351">星际争霸二新兵种资料：Warp Ray</a></li>
   <li><span class="postdate">30 Jun 2007</span> <a class="entrylink" href="/post/347">星际争霸二新兵种资料：Colossus</a></li>
@@ -145,7 +87,7 @@
   <li><span class="postdate">21 Jun 2007</span> <a class="entrylink" href="/post/342">下贱导向编程指引</a></li>
   <li><span class="postdate">15 Jun 2007</span> <a class="entrylink" href="/post/338">什么标题好呢</a></li>
   <li><span class="postdate">05 Jun 2007</span> <a class="entrylink" href="/post/329">来一篇短的</a></li>
-  <li><span class="postdate">02 Jun 2007</span> <a class="entrylink" href="/post/328">非线性的六七八天：艺术历史博物馆，Tunnel，MQ，拾遗，终结篇，以及序章。 6aaG77yMVHVubmVs77yMTVHvvIzmi77pgZfvvIznu4jnu5Pnr4fvvIzku6Xl j4rluo/nq6DjgII=</a></li>
+  <li><span class="postdate">02 Jun 2007</span> <a class="entrylink" href="/post/328">非线性的六七八天：艺术历史博物馆，Tunnel，MQ，拾遗，终结篇，以及序章。</a></li>
   <li><span class="postdate">24 May 2007</span> <a class="entrylink" href="/post/323">努力工作拼命玩</a></li>
   <li><span class="postdate">20 May 2007</span> <a class="entrylink" href="/post/322">StarCraft 2</a></li>
   <li><span class="postdate">17 May 2007</span> <a class="entrylink" href="/post/317">zz两篇</a></li>
@@ -158,12 +100,12 @@
   <li><span class="postdate">11 Apr 2007</span> <a class="entrylink" href="/post/296">十年</a></li>
   <li><span class="postdate">10 Apr 2007</span> <a class="entrylink" href="/post/295">Top Ten Video Game Weapons</a></li>
   <li><span class="postdate">09 Apr 2007</span> <a class="entrylink" href="/post/294">Das Keyboard</a></li>
-  <li><span class="postdate">06 Apr 2007</span> <a class="entrylink" href="/post/293">第五天（下）：垃圾焚化厂，百水公寓，爱尔兰咖啡。 5YWs5a+T77yM54ix5bCU5YWw5ZKW5ZWh44CC</a></li>
-  <li><span class="postdate">22 Mar 2007</span> <a class="entrylink" href="/post/292">第五天（上）：中央公墓，Gasometer，圣马克思墓，城市公园，垃圾焚化厂，百水公寓，爱尔兰咖啡。 77yM5Zyj6ams5YWL5oCd5aKT77yM5Z+O5biC5YWs5Zut77yM5Z6D5Zy+54Sa 5YyW5Y6C77yM55m+5rC05YWs5a+T77yM54ix5bCU5YWw5ZKW5ZWh44CC</a></li>
-  <li><span class="postdate">20 Mar 2007</span> <a class="entrylink" href="/post/291">第四天：青年旅馆，美泉宫，在动物园散步才是正经事，Before The Sunrise之摩天轮，超级八人过山车。 54mp5Zut5pWj5q2l5omN5piv5q2j57uP5LqL77yMQmVmb3JlIFRoZSBTdW5y aXNl5LmL5pGp5aSp6L2u77yM6LaF57qn5YWr5Lq66L+H5bGx6L2m44CC</a></li>
-  <li><span class="postdate">19 Mar 2007</span> <a class="entrylink" href="/post/290">第三天：茜茜公主展览馆，人民公园中赤裸的男子铜像，金shai大厅，暴怒的宿舍管理员。 5Zut5Lit6LWk6KO455qE55S35a2Q6ZOc5YOP77yM6YeRc2hhaeWkp+WOhe+8 jOaatOaAkueahOWuv+iIjeeuoeeQhuWRmOOAgg==</a></li>
-  <li><span class="postdate">18 Mar 2007</span> <a class="entrylink" href="/post/288">第二天：史蒂芬南塔楼，霍夫堡，铁盔甲，吃不完的意大利面条，ILTempo，马提尼。 6ZOB55uU55Sy77yM5ZCD5LiN5a6M55qE5oSP5aSn5Yip6Z2i5p2h77yMSUxU ZW1wb++8jOmprOaPkOWwvOOAgg==</a></li>
-  <li><span class="postdate">17 Mar 2007</span> <a class="entrylink" href="/post/287">维也纳第一天：从斯图加特到维也纳，橡树林或者小蛋蛋大街，猪排，史蒂芬教堂，小赌场。 57qz77yM5qmh5qCR5p6X5oiW6ICF5bCP6JuL6JuL5aSn6KGX77yM54yq5o6S 77yM5Y+y6JKC6Iqs5pWZ5aCC77yM5bCP6LWM5Zy644CC</a></li>
+  <li><span class="postdate">06 Apr 2007</span> <a class="entrylink" href="/post/293">第五天（下）：垃圾焚化厂，百水公寓，爱尔兰咖啡。</a></li>
+  <li><span class="postdate">22 Mar 2007</span> <a class="entrylink" href="/post/292">第五天（上）：中央公墓，Gasometer，圣马克思墓，城市公园，垃圾焚化厂，百水公寓，爱尔兰咖啡。</a></li>
+  <li><span class="postdate">20 Mar 2007</span> <a class="entrylink" href="/post/291">第四天：青年旅馆，美泉宫，在动物园散步才是正经事，Before The Sunrise之摩天轮，超级八人过山车。</a></li>
+  <li><span class="postdate">19 Mar 2007</span> <a class="entrylink" href="/post/290">第三天：茜茜公主展览馆，人民公园中赤裸的男子铜像，金shai大厅，暴怒的宿舍管理员。</a></li>
+  <li><span class="postdate">18 Mar 2007</span> <a class="entrylink" href="/post/288">第二天：史蒂芬南塔楼，霍夫堡，铁盔甲，吃不完的意大利面条，ILTempo，马提尼。</a></li>
+  <li><span class="postdate">17 Mar 2007</span> <a class="entrylink" href="/post/287">维也纳第一天：从斯图加特到维也纳，橡树林或者小蛋蛋大街，猪排，史蒂芬教堂，小赌场。</a></li>
   <li><span class="postdate">06 Mar 2007</span> <a class="entrylink" href="/post/286">喜闻Ms.SP见录MIT</a></li>
   <li><span class="postdate">06 Mar 2007</span> <a class="entrylink" href="/post/285">RTS, RPG, FPS, Python</a></li>
   <li><span class="postdate">27 Feb 2007</span> <a class="entrylink" href="/post/284">Fox放假中</a></li>
@@ -181,7 +123,7 @@
   <li><span class="postdate">27 Oct 2006</span> <a class="entrylink" href="/post/274">Untitled</a></li>
   <li><span class="postdate">13 Oct 2006</span> <a class="entrylink" href="/post/273">看图说话</a></li>
   <li><span class="postdate">09 Oct 2006</span> <a class="entrylink" href="/post/272">什么标题好呢</a></li>
-  <li><span class="postdate">30 Sep 2006</span> <a class="entrylink" href="/post/271">知名后现代解构主义blogger lonelyfox创作的无主题变奏 iJvkvZznmoTml6DkuLvpopjlj5jlpY8=</a></li>
+  <li><span class="postdate">30 Sep 2006</span> <a class="entrylink" href="/post/271">知名后现代解构主义blogger lonelyfox创作的无主题变奏</a></li>
   <li><span class="postdate">26 Sep 2006</span> <a class="entrylink" href="/post/270">周末</a></li>
   <li><span class="postdate">21 Sep 2006</span> <a class="entrylink" href="/post/49">Python 2.5，回忆录及其他。</a></li>
   <li><span class="postdate">19 Sep 2006</span> <a class="entrylink" href="/post/50">Fox's Trivial Life in Germany, part 3</a></li>
@@ -190,7 +132,7 @@
   <li><span class="postdate">08 Sep 2006</span> <a class="entrylink" href="/post/55">i miss you guys</a></li>
   <li><span class="postdate">29 Aug 2006</span> <a class="entrylink" href="/post/76">要走了</a></li>
   <li><span class="postdate">21 Aug 2006</span> <a class="entrylink" href="/post/78">How To Kiss A Woman</a></li>
-  <li><span class="postdate">11 Aug 2006</span> <a class="entrylink" href="/post/80">BDF外联部发言人lonelyfox就Ms.SP暂停blog一事做出的书面意见 bG9n5LiA5LqL5YGa5Ye655qE5Lmm6Z2i5oSP6KeB</a></li>
+  <li><span class="postdate">11 Aug 2006</span> <a class="entrylink" href="/post/80">BDF外联部发言人lonelyfox就Ms.SP暂停blog一事做出的书面意见</a></li>
   <li><span class="postdate">07 Aug 2006</span> <a class="entrylink" href="/post/81">[zz]理解的角度</a></li>
   <li><span class="postdate">24 Jul 2006</span> <a class="entrylink" href="/post/84">点名答到</a></li>
   <li><span class="postdate">17 Jul 2006</span> <a class="entrylink" href="/post/85">Fox的摄影入门指引</a></li>
@@ -239,87 +181,8 @@
   <li><span class="postdate">27 Sep 2005</span> <a class="entrylink" href="/post/241">写点什么</a></li>
   <li><span class="postdate">06 Sep 2005</span> <a class="entrylink" href="/post/245">被波及</a></li>
   <li><span class="postdate">26 Aug 2005</span> <a class="entrylink" href="/post/252">小段文字们</a></li>
-  <li><span class="postdate">07 Aug 2005</span> <a class="entrylink" href="/post/259">259</a></li>
   <li><span class="postdate">07 Aug 2005</span> <a class="entrylink" href="/post/259">北京浮生纪</a></li>
   <li><span class="postdate">23 Jul 2005</span> <a class="entrylink" href="/post/264">Crossfading 3</a></li>
   <li><span class="postdate">08 Jul 2005</span> <a class="entrylink" href="/post/267">Crossfading 2</a></li>
   <li><span class="postdate">05 Jul 2005</span> <a class="entrylink" href="/post/268">Crossfading</a></li>
-</ul>
-</nav>
 
-    </div><!--//#main-->
-  </div> <!--! end of #container -->
-  <footer>
-   <nav id="existentials">
-  <h2>Existentials</h2>
-  <ul>
-    <li id="github"><a href="https://github.com/metaphox">github</a></li>
-    <li id="flickr"><a href="http://www.flickr.com/photos/lonelyfox/">flickr</a></li>
-    <li id="twitter"><a href="https://twitter.com/#!/metaphox">twitter</a></li>
-    <li id="facebook"><a href="http://www.facebook.com/metaphox">facebook</a></li>
-    <li id="linkedin"><a href="http://www.linkedin.com/pub/tao-wu/20/296/930">linkedin</a></li>
-  </ul>
-</nav>
-<nav id="blogroll">
-  <h2>Blogroll</h2>
-  <ul id="group1">
-    <li><a href="http://wondermore.blogspot.com/" rel="friend met" title="a.k.a. did">wonderfulmore</a></li>
-    <li><a href="http://zixiaoshu.spaces.live.com/" rel="friend met" title="亮子">北京人在悉尼</a></li>
-    <li><a href="http://sukie_zhao.blog.tianya.cn" rel="fiend met" title="为晴雪所洗">sukie赵</a></li>
-    <li><a href="http://www.cjpanda.com/life/" rel="friend met" title="the CJ.">cjPanda</a></li>
-    <li><a href="http://biantaishabi.com/blog/" rel="friend" title="变态傻逼">btsb</a></li>
-    <li><a href="http://hsiaoweichan.blogspot.com/" rel="" title="friend met">vivian</a></li>
-    <li><a href="http://cityyoho.blogbus.com/" rel="friend met" title="灭绝">cityyoho</a></li>
-  </ul><ul id="group2">
-    <li><a href="http://weblog.bororo.org/" rel="acquaintance" >maple</a></li>
-    <li><a href="http://tianjintianjin.yculblog.com/" rel="friend met" title="猜错的大多数">tulip</a></li>
-    <li><a href="http://tankliang.blogbus.com/" rel="friend" >坦克梁</a></li>
-    <li><a href="http://hi.baidu.com/stone9" rel="friend" title="goddamner">stone</a></li>
-    <li><a href="http://hi.baidu.com/pavements84" rel="friend met" title="老妹">pavements</a></li>
-    <li><a href="http://blog.sinzy.net/changke" rel="friend met" title="天魔的家">问号鱼</a></li>
-    <li><a href="http://gilbertbeilschmidt.blog124.fc2.com/" rel="friend" title="小章鱼">Schlaraffenland</a></li>
-  </ul><ul id="group3">
-    <li><a href="http://www.post-concrete.com/blog/" rel="friend" title="Institute of East Asiatic Venomology">東亞毒液學研究所</a></li>
-    <li><a href="http://asukashinjirei.blogbus.com/" rel="friend" title="杨不风">草木贲华</a></li>
-    <li><a href="http://www.upshine.net/blog/" rel="friend met" title="Rex">三楼的卡西欧计算器</a></li>
-    <li><a href="http://kornephoros.de/" rel="friend" title="天市右垣一">追忆吹水年华</a></li>
-    <li><a href="http://k1oe.me/" rel="friend" title="Chloe">bad habits die hard</a></li>
-    <li><a href="http://howlongisnow.com/" rel="friend" title="大头怪阿姨">多说无益</a></li>
-    <li><a href="http://lawrence.li/blog/" rel="friend" title="Lawrence Li">一天世界</a></li>
-    <li><a href="http://blog.doigoi.com/" rel="friend" title="橙">得果德语</a></li>
-  </ul>
-</nav><!--/#blogroll-->
- 
-  </footer>
-
-  <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.6.2.min.js"><\/script>');</script>
-
-
-  <!-- scripts concatenated and minified via ant build script-->
-  <script defer src="/js/plugins.js"></script>
-  <script defer src="/js/script.js"></script>
-  <!-- end scripts-->
-
-	
-  <!-- Change UA-XXXXX-X to be your site's ID -->
-  <script>/*
-    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    }); */
-  </script>
-
-
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-  
-</body>
-</html>

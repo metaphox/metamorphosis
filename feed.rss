@@ -6,7 +6,7 @@ layout: nil
   <channel>
     <title>Metamorphosis</title>
     <link>http://blog.metaphox.com/</link>
-    <atom:link href="http://blog.metaphox.com/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.metaphox.com/feed.rss" rel="self" type="application/rss+xml" />
     <description>Yet another awkward predicament.</description>
     <language>zh-cn</language>
     <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>

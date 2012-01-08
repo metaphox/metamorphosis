@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Metamorphosis</title>
- <link href="http://metaphox.name/metamorphosis/feed/atom.xml" rel="self" />
- <link href="http://metaphox.name/metamorphosis/feed/" />
- <updated>2012-01-06T22:46:41+01:00</updated>
+ <link href="http://blog.metaphox.com/feed/atom.xml" rel="self" />
+ <link href="http://blog.metaphox.com/feed/atom.xml" />
+ <updated>2012-01-08T23:40:14+01:00</updated>
  <id>http://metaphox.name/metamorphosis/</id>
  <author>
    <name>Metaphox</name>

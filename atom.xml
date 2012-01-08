@@ -1,12 +1,13 @@
 ---
 layout: nil
+baseurl: http://blog.metaphox.com/
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Metamorphosis</title>
- <link href="http://metaphox.name/metamorphosis/feed/atom.xml" rel="self" />
- <link href="http://metaphox.name/metamorphosis/feed/" />
+ <link href="{{ page.baseurl }}feed/atom.xml" rel="self" />
+ <link href="{{ page.baseurl }}feed/atom.xml" />
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://metaphox.name/metamorphosis/</id>
  <author>

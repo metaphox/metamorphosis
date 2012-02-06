@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>关于Web UI | Metamorphosis</title>
+  <meta name="description" content="Metaphox's personal blog">
+  <meta name="author" content="Metaphox">
+
+<!-- disable this before responsive is done
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  -->
+
+  <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC|IM+Fell+DW+Pica+SC|Bowlby+One+SC' rel='stylesheet'>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="stylesheet" href="/css/disqus.css">
+</head>
+
+<body class="nowireframe">
+  <div id="grid-columns">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+    <div id="container">
+    <header id="siteheader">
+	    <div id="sitename"><a href="/">Metamorphosis</a></div/>
+      <div id="feed"><a href="/feed.rss">RSS feed</a></div>
+    </header>
+    <div id="main" role="main">
+    <div id="wrapper">
+<article>
+  <h1><a href="/post/297">关于Web UI</a></h1>
+  <p>天气终于开始转暖，昼夜温差虽然还是那么大，但在晴日的下午穿短袖出门是没有问题的。各式树木都开了花或者努力长叶子，我（可能是写维也纳游记留下的后遗症，用第一人称已经开始不适应，总想换成Metaphox）狂爱的夏天眼看已经不远了。</p>
+<p>嗯，一段废话之后切入正题。大概是2005年的时候我开始每个季节给临窗集换一个theme，若没记错的话现在应该换了8个。对于donews早先采用的汉化<a href="http://scottwater.com">.Text blog</a>平台来说，预设的若干Theme丑到了一个境界，用户的自定制外观只能通过CSS来进行，辗转腾挪的余地不大。不过这也是其简便之处，反正页面结构就是一成不变的标题，左侧的导航栏，右侧的正文栏，加一个不起眼的页脚，我能做的也就是改改颜色，放几张背景图，定义一下各类元素如何显示，然后测试一下浏览器兼容性了事，总耗时不会超过一天。但是后来donews的蹩脚工程师自行对这个设计还不错的blog程序做了修改，许多后来添加上去的模块根本就没考虑到用户自定义外观的需求，让我觉得很痛苦。又兼他们的数据库服务器显然不堪重负，发个贴子成功与否要看人品，所以一怒之下我们搬到了这里，blog也换成了wordpress。</p>
+<p>Wordpress是一个基于php的blog系统，或者按照其网站的定义，是一个“个人发布平台”，免费，下载量大概有100万左右。自从搬家换了wordpress之后，我就开始注意为它设计的那些无尽的第三方theme。虽然php会不可避免地将html和程序逻辑混合在一起，但wordpress的结构设计还是保证自定义外观在极为灵活的同时只有相当低的复杂度，使得用户可以按照自己的意愿来完全随意地控制一切元素的排布和外观，亦即可以同时定义文档“长什么样”和“看起来什么样”。不过这也就意味着，如果要做一个真正完全自定义的theme，工作量也就相对于改改css增加了很多。我读了读wordpress提供的theme制作指导，觉得从零开始的话，工作量按我的效率大概至少要半个月。眼看夏天将至，我不禁开始为是否要弄上这么一个完全自定义的theme而踌躇了。</p>
+<p>对纯粹的Web UI Design，我不觉得自己有多喜欢，虽然我也承认，<a href="http://www.alistapart.com">A List Apart</a>是我最常认真读的网站之一，通过给bdf做theme及其他的一些经历也多少也积累了点这方面的经验。但我始终觉得，Web UI设计是一个吃力不讨好的活计，主要问题是要考量的技术细节太多，而简单的愿望要通过非常复杂的手段来达成，浏览器兼容是一场永恒的噩梦。更郁闷的是，如果以Web UI设计为饭碗的话，还必须接受用户的指摘，因为你的工作是那样的直观，再门外汉的人也可以指指点点。我大二的时候有个学工业设计的学长，与我一起在学校网站共事。网站的工作组接了铁道部的一个项目，他和其他几个技术骨干一起负责。他就是那个很惨的负责UI的人。我们都知道，以官员为代表的客户们有个习惯，就是一开始没有任何明确的要求，直到你让他看到成品，明确的想法才开始一点点地在他们日理万机的大脑里浮现出来。注意是“一点点”地，也就是说，每次看都会有小小的新需求，小到把一幅图换一换，这里的按钮用圆形之类，大到栏目要变更、查询页面的信息显示方式要改。一旦有新的更动，我的负责UI的学长永远是第一个被传唤的人。只有他完成了自己的工作，后面的人才可以跟进，因为网站的UI和逻辑混合在一起，UI动了，逻辑就要跟着变。一群人忙完之后连夜将网站更新，然后领导老师再打电话给头头们，让他们能在百忙之中再看看，提新的意见。如此这般折腾了一个月左右，好歹是在最后期限前完成了。当然， 完成的那个网站谁也不想去多看，它就如同Warcraft里的憎恶，是按照领导的意见将尸体块重新拼接之后缝合而成的，全靠UI设计师的怨念和程序员的魔法驱动。</p>
+<p>现在我回想，那个时候要是可以搞搞xp就好了，先弄出一个原型来，然后粘着客户一点点改。底层先做个能将就着用的，反正领导也不懂。此外最重要的就是放下自己的所谓设计理念，如果觉得客户不懂设计，就不可避免地贬低其意见，认为对方以门外汉的眼光对自己的大师之作指指点点，然后把UI设计得一肚子火。当然那时候我还不知道什么叫做xp，只是模糊地觉得这样的开发过程不对。我只是尽量给他们打打下手，顺便旁观试图从中学到点什么。不做UI大概就是当时的想法之一。现在想来，那时候以学长为首的家伙们还是很单纯，有拼劲，看重理想，迎难而上。而我却那么早的萎掉了，满眼只看到UI设计那么多痛苦。
+</p><p>不扯往事。还是说说对良好的Web UI设计的一些感触。做了虽然没几个，但是看了那么多，鉴赏总是要比创作简单的。个人觉得，好的Web UI，最重要的无非以下三点：合适的外观，易用性好，易于维护。这三点都能做好，就算缺乏灵气，也能算上佳作。前两点是关于用户体验的，第三点则是为了程序员好。而且要做好三点实际上又是从易到难的顺序。</p>
+<p>先说合适的外观。注意是“合适”，甚至都不一定要美观。简朴的网站未必难看，难看的网站肯定不简朴。我从来不认为哪个功能性网站是靠漂亮而获得成功的，艺术性应该屈从于实用性，即外观应该服从于功能。仔细想想看网站要提供什么功能，然后为之设计一个专有的外观，这是最自然也最简单的过程。Slashdot美观么？改版之后也还是那个土样子，但是按照其内容来说，我不觉得有什么外观能比现在的更合适。Flickr美观么？应该说是美观的，但是你喜欢用它的第一原因肯定不是因为它看起来很漂亮。至于Google的简约，恐怕也已经没法用是否美观来界定（当然，一定要说的话肯定还是美观的，对比一下百度就能感觉到。如果你觉得百度比Google好看，那可以不用往下看了）。但很遗憾的是，有太多网站试图让内容去适应外观。将一个模板拿来修改，按照外观来布置功能。这样更省力么？也许吧，不过我没见过几个成功的例子。更多的，是为了将模板留下的大片空隙补满而填充大片华而不实的内容。一眼望去好多stuff，仔细看了果然都是stuff。这样做不仅难看，而且严重影响到易用性。</p>
+<p>所以如果外观合适，易用性也就可以随之提升。多数人都应该有在一个网站上寻找自己想要的信息，千回百转之后无功而返的的经历。不乏网站将用户真正感兴趣的东西藏在最深处，首页上则布满广告和垃圾信息。良好的网站UI应该可以让用户在一瞥之下就看到自己希望在这里得到的东西，这就要求网站能够掌握好网页元素的密度。个人的体会是，人能在一瞬间数出来的物体数量大概是五到八个，所以最核心的功能应该浓缩在五到八个最显眼的元素上。其他的辅助功能绝对不应该比它们抢眼。Google提供了不下20种服务，但是首页上只显示最常用的五个。点一下“more”，又只出来五个，其他统统藏在Even More后面。对于功能性的网站来说，首页上的元素超过一个限度之后，每增加一个，易用性就会降低一点，排布和维护的难度也随之增加一点。毕竟眼球被吸引的程度和引力源的数量成反比，全页面吸引等于全页面被无视。有时候不只是商业网站， blog也未尝不如是。在blog侧边栏堆满flash电子表、音乐播放器、书摘、相册、天气预报、来宾ip探测器的唯一效果只能是乱花迷人眼，除了挤占带宽和打扰阅读注意力之外没有任何意义。友情链接和计数器也同样是可有可无的东西，对除了blogger自己之外的人意义不大。</p>
+<p>最后是易于维护。Web UI与传统的用户UI设计之巨大区别之一在于其需要更新的速度。网站有了新功能，UI就往往要随之更新。所以UI设计从来都不是一劳永逸的活计，好的网站，改版的频率都很快，所以UI就必须考虑到扩展性和维护性，这和写代码一样。UI设计师们都清楚，最终将界面传递给用户的不是Photoshop，而是Html，可我认识太多人的Photoshop技艺炉火纯青，对html的认知却停留在史前时代，将html的设计视为UI的最痛苦一步，诅咒Dreamweaver却又不得不依赖于它。有不少网站看了让人赏心悦目，用起来也还算马马虎虎，但是看看html源代码的一团乱，我就能想像到UI设计师是一个怎样勤奋的人，并从心底产生一股遍杀天下可视化Html编辑器的戾气。早先Html被发明出来，是为了描述一个文档“写了什么”，而不是用来描述所写的东西“看起来如何”，可惜在Netscape、微软和可视化编辑器的推波助澜下，无端加入了无数定义显示效果的特性，而这样做的结果就是，Html越来越复杂而难以维护，今天有太多人自知或不自知地阉割掉了它的语意特性，把它变成了writeonly的语言，他们把html写（更确切说，画）成了一滩字符呕吐物，然后把程序逻辑混入其中，既而逼着浏览器和搜索引擎吃下去。试想这样的设计结果如何保证高维护性？如果网站需要改版，那么所有页面都要重新设计一次。这样的脏活累活干起来当然不容易，三流UI设计师叫屈也多半是为此。如果一个人能最起码的知道表格不是不能拿来布局，但表格本不是用来布局的，以及div元素的语意是division，而不是什么“层”，CSS的存在意义是将文档的显示方式与文档的逻辑结构剥离的话，他肯定不会因为需要为过去设计的UI改版而烦恼。无奈以前我读过不少讲网页设计的书，上来就告诉你在dreamweaver里新建一个文档，接下来通篇便是教你如何实现一个又一个特效，却对于这么做的原理和副作用闭口不谈。这样误人子弟的书现在也不少见，我奉劝各位如果有志于从事Web UI事业，此类书籍还是少看为妙。UI设计方面，要看的话最好去读读Jeffrey Zeldman的书，首推Designing With Web Standards，有中文版。</p>
+<p>我觉得网站做好也不难，Web UI发展了这些年，对于如何做好上述几点也都总结出了一定之规，按图索骥总是不会错。当然，主要的经验都是来自国外，我国工匠届素来缺乏将经验总结和系统化的习惯。我想起很久以前读《程序员》，有一句话说国内的软件界主要是低水平技术的重复劳动。现在感觉这句话放在Web UI设计上也不失正确性。</p>
+<p>但是，照搬外来经验对网站设计的影响也是不良的。其中最大的诱因，我觉得是因为中文的特性。暂时先撇开排版问题，只说并非最严重，却让我觉得最难过的一点：字体。相比那些等宽非等宽有衬线无衬线从Tahoma到Georgia不下10种，几乎是平台无关的英文（应该说拉丁字母语言）字体，使用中文做网页时，除了宋体我们还有其他选择么？好吧也许还有明流体，不过我不觉得二者有多大差异。楷体黑体可以使用的场合极为有限，一般要满足尺寸大于17像素，用户平台有对应字体，浏览器要开抗锯齿才能称得上美观，而后两个条件并不总是具备的。汉字之美的特征之一就是不同字体展现出来的不同感受，但在web上这一先天优势彻底消失。如果想使用别的字体，通常的办法就是使用图形格式，但是这样一来，其内容就无法被复制和搜索。目前我尚没有在任何地方看到能够解决这个问题的终极方案。</p>
+<p>至于排版问题，个人感触是，汉字太方了，一个个彼此割裂，独立自成体系，缺乏流动感。这就导致在多数网站在使用完全相同的布局和配色时，显示中文总要比显示英文难看一些。（不只是网站，汉化了的游戏往往都会变丑。）对于这个问题的解决方案，我觉得是寻找出一种合适中文排版及阅读节奏的比例关系，这方面与我们具有相似问题的韩国人还是比较出色的。其实竖排中文是非常好看的，无奈习惯的人不多，浏览器对指定文字流向的支持程度（尤其gecko引擎）也相当的差。而且，又是因为字体的缘故，不同作用的汉字之间的比例关系被限制了。举例而言，不论什么浏览器，如果不指定css，那么html中默认的&lt;h1 /&gt;元素和&lt;h6 /&gt;元素之间的比例是差别非常悬殊的，因为拉丁文字的字体具备这种缩放性，多数拉丁语系网站也都在设计时自由采取各种字体尺寸。反观中文，谁敢用超过17像素、小于11像素的文字，基本上就是在玩火。还有，拉丁文字可以用斜体和粗体来进一步修饰，可中文虽然粗体还问题不大，斜体就非常难看，事实上中文根本就没有斜体这个概念。原来在donews时代我在css中一定要把&lt;em /&gt;和&lt;i /&gt;标签重新定义以防斜体中文出现。无奈，现在的这个theme将blockquote定义为斜体，一方面，如果你quote的是英文，会非常好看，另一方面，如果quote中文，那些耸着肩膀的汉字就像是在扎我的眼睛。我挣扎于取舍间，一直没有动手改掉。</p>
+<p>当然，在网页字体和排版的问题上，我们并不孤单。日韩文字也有类似的特点，因此显得丑陋的网站也不在少数。不过韩国人在这方面已经有不少解决模式，目前比较流行的网站模板也不少都来自韩国。有空的话应该总结一下他们的经验。</p>
+<p>作为业余爱好，做网页还是挺好玩的。</p>
+<p>而写到这里，我已经决定了，今夏的临窗集要换个清爽一些的theme。我连续用了两个深色背景、浅色文字的theme，事实证明这样的配色是不宜长时间阅读的。当然可能也是因为我搞不好，所以换个浅色的主题来改改终究是容易一些。对，我不会自己做一个theme，我将从数以万记的wordpress theme中选一个不错的，然后改巴改巴换上来……</p>
+
+  <hr />
+  <div id="disqus">  </div>
+</article>
+<aside class="entry-info">
+  <div class="pubdate">published 12 Apr 2007</div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'metaphoxite'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+  
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</aside>
+</div>
+
+    </div><!--//#main-->
+  </div> <!--! end of #container -->
+  <footer>
+   <nav id="existentials">
+  <h2>Existentials</h2>
+  <ul>
+    <li id="github"><a href="https://github.com/metaphox">github</a></li>
+    <li id="flickr"><a href="http://www.flickr.com/photos/lonelyfox/">flickr</a></li>
+    <li id="twitter"><a href="https://twitter.com/#!/metaphox">twitter</a></li>
+    <li id="facebook"><a href="http://www.facebook.com/metaphox">facebook</a></li>
+    <li id="linkedin"><a href="http://www.linkedin.com/pub/tao-wu/20/296/930">linkedin</a></li>
+  </ul>
+</nav>
+<nav id="blogroll">
+  <h2>Blogroll</h2>
+  <ul id="group1">
+    <li><a href="http://wondermore.blogspot.com/" rel="friend met" title="a.k.a. did">wonderfulmore</a></li>
+    <li><a href="http://zixiaoshu.spaces.live.com/" rel="friend met" title="亮子">北京人在悉尼</a></li>
+    <li><a href="http://sukie_zhao.blog.tianya.cn" rel="fiend met" title="为晴雪所洗">sukie赵</a></li>
+    <li><a href="http://www.cjpanda.com/life/" rel="friend met" title="the CJ.">cjPanda</a></li>
+    <li><a href="http://biantaishabi.com/blog/" rel="friend" title="变态傻逼">btsb</a></li>
+    <li><a href="http://hsiaoweichan.blogspot.com/" rel="" title="friend met">vivian</a></li>
+    <li><a href="http://cityyoho.blogbus.com/" rel="friend met" title="灭绝">cityyoho</a></li>
+  </ul><ul id="group2">
+    <li><a href="http://weblog.bororo.org/" rel="acquaintance" >maple</a></li>
+    <li><a href="http://tianjintianjin.yculblog.com/" rel="friend met" title="猜错的大多数">tulip</a></li>
+    <li><a href="http://tankliang.blogbus.com/" rel="friend" >坦克梁</a></li>
+    <li><a href="http://hi.baidu.com/stone9" rel="friend" title="goddamner">stone</a></li>
+    <li><a href="http://hi.baidu.com/pavements84" rel="friend met" title="老妹">pavements</a></li>
+    <li><a href="http://blog.sinzy.net/changke" rel="friend met" title="天魔的家">问号鱼</a></li>
+    <li><a href="http://gilbertbeilschmidt.blog124.fc2.com/" rel="friend" title="小章鱼">Schlaraffenland</a></li>
+  </ul><ul id="group3">
+    <li><a href="http://www.post-concrete.com/blog/" rel="friend" title="Institute of East Asiatic Venomology">東亞毒液學研究所</a></li>
+    <li><a href="http://asukashinjirei.blogbus.com/" rel="friend" title="杨不风">草木贲华</a></li>
+    <li><a href="http://www.upshine.net/blog/" rel="friend met" title="Rex">三楼的卡西欧计算器</a></li>
+    <li><a href="http://kornephoros.de/" rel="friend" title="天市右垣一">追忆吹水年华</a></li>
+    <li><a href="http://k1oe.me/" rel="friend" title="Chloe">bad habits die hard</a></li>
+    <li><a href="http://howlongisnow.com/" rel="friend" title="大头怪阿姨">多说无益</a></li>
+    <li><a href="http://lawrence.li/blog/" rel="friend" title="Lawrence Li">一天世界</a></li>
+    <li><a href="http://blog.doigoi.com/" rel="friend" title="橙">得果德语</a></li>
+  </ul>
+</nav><!--/#blogroll-->
+ 
+  </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.6.2.min.js"><\/script>');</script>
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="/js/plugins.js"></script>
+  <script defer src="/js/script.js"></script>
+  <!-- end scripts-->
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <script>/*
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    }); */
+  </script>
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>

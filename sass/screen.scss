@@ -12,13 +12,13 @@ $fsizeivl : 2px; //font size increment
 
 //text color
 
-$black: #334;
-$darkgrey: #333;
-$grey: #666;
+$black:     #334;
+$darkgrey:  #333;
+$grey:      #666;
 $lightgrey: #999;
-$verylightgrey: #ddd;
-$pblue: #003153;
-$sbrown: #86320D;
+$lightgrey: #ddd;
+$pblue:     #003153;
+$sbrown:    #86320D;
 
 
 body.wireframe {
@@ -35,6 +35,9 @@ body.wireframe {
       background:rgba(100, 100, 10, 0.1);
     }
     z-index:-10000;
+  }
+  #container{
+    background:none !important;
   }
 }
 
@@ -106,7 +109,7 @@ body{
   }
   img{
     padding: $gheight $gwidth;
-    background: $verylightgrey;
+    background: $lightgrey;
   }
   a:hover img{
     background: $lightgrey;
@@ -178,15 +181,26 @@ body{
     background:url(../img/headerbg.jpg) repeat-y center bottom;
     #sitename a{
       margin-left:$gwidth - 3px;
-      min-height:270px;
+      height:350px;
       width:125px;
       text-indent:-32767px;
       display:block;
       background:url(../img/header.png) no-repeat center bottom;
-      @include transition-position;
-      &:hover{
-        height:350px;
-        border:none;
+    }
+    #feed{
+      text-align: center;
+      padding-top: $gheight;
+      a{
+        display: inline-block;
+        text-indent: -32767px;
+        width: 62px;
+        height: 62px;
+        background: url(../img/rss.png) no-repeat center;
+        border: 3px solid rgba(250, 250, 250, 0.2);
+        border-radius: 36px;
+        &:hover, &:active, &:focus{
+          border: 3px solid rgba(250, 250, 250, 0.9);
+        }
       }
     }
   }
@@ -201,7 +215,7 @@ body{
         width: ($gwidth * 5 * 4) + ($gwidth * 3);
         margin:$gheight * 2 0;
         font-size: $bfsize * 2.5;
-        color: $lightgrey;
+        color: $grey;
         &.latin{
           font-style: italic;
           font-variant:small-caps;
@@ -333,7 +347,7 @@ body{
 footer{
   min-height:$gheight * 15;
   background:$pblue url(../img/footerbg.png) top left;
-  color: $verylightgrey;
+  color: $lightgrey;
   padding:$gheight 0 $gheight $gwidth * 7;
   h2{
     margin-top:0;
@@ -356,7 +370,7 @@ footer{
       }
     }
     a{
-      color:$verylightgrey;
+      color:$lightgrey;
       &:hover{
         color:#fff;
       }

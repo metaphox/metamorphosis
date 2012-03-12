@@ -3,8 +3,8 @@ layout: default
 title: Yet Another Awkward Predicament
 ---
 <nav id="blog-toc">
+<blockquote id="qotd" class="latin">Nunc scio, quid sit Amor.</blockquote>
 <h1>Table of Contents</h1>
-<blockquote id="qotd" class="latin">Horas non numero nisi serenas.</blockquote>
 <ul id="toc-list">{% for post in site.posts %}
   <li><span class="postdate">{{post.date | date_to_string }}</span> <a class="entrylink" href="{{ post.url }}">{{ post.title }}</a></li>{% endfor %}
 </ul>

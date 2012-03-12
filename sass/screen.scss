@@ -2,23 +2,24 @@
 $gwidth : 25px; //grid cell width
 $gheight : 25px; //grid cell height
 
-$ffserif : Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Hiragino Sans GB", /* SIGH */serif;
-$ffsans : Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, "Hiragino Sans GB", sans-serif;
-$ffmono : Monaco, "Lucida Console", monospace;
-$ffdatum: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+//$ffheader : "Baskerville", "Baskerville Old Face", Palatino, "Palatino Linotype", Georgia, "Hiragino Mincho Pro", serif;
+$ffbody   : Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Hiragino Sans GB", /* SIGH */serif;
+$ffsans   : Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, "Hiragino Sans GB", sans-serif;
+$ffmono   : Monaco, "Lucida Console", monospace;
+$ffdatum  : "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
 
 $bfsize: 15px; //body font size
 $fsizeivl : 2px; //font size increment
 
 //text color
 
-$black:     #334;
-$darkgrey:  #333;
-$grey:      #666;
-$lightgrey: #999;
-$lightgrey: #ddd;
-$pblue:     #003153;
-$sbrown:    #86320D;
+$black:       #334;
+$darkgrey:    #333;
+$grey:        #666;
+$lightgrey:   #999;
+$lightergrey: #aaa;
+$pblue:       #003153;
+$sbrown:      #86320D;
 
 
 body.wireframe {
@@ -42,7 +43,7 @@ body.wireframe {
 }
 
 body{
-  font-family: $ffserif;
+  font-family: $ffbody;
   font-size:$bfsize;
   line-height:$gheight;
 
@@ -112,7 +113,7 @@ body{
     background: $lightgrey;
   }
   a:hover img{
-    background: $lightgrey;
+    background: $lightergrey;
   }
   br + a img{
     margin:$gheight 0;
@@ -213,13 +214,17 @@ body{
       margin-bottom:$gheight;
       #qotd{
         width: ($gwidth * 5 * 4) + ($gwidth * 3);
-        margin:$gheight * 2 0;
-        font-size: $bfsize * 2.5;
-        color: $grey;
+        margin: $gheight * 2 0;
+        font-size: $bfsize * 1.8;
+        color: $sbrown;
+        font-family: $ffdatum;
         &.latin{
           font-style: italic;
-          font-variant:small-caps;
+          //font-variant:small-caps;
         }
+      }
+      h1{
+        margin: 0 0 $gheight * 2 0;
       }
       ul{
         padding-left:0;
@@ -288,6 +293,7 @@ body{
     width: ($gwidth * 5 * 4) + ($gwidth * 3);
     color: $black;
     h1{
+      font-family: $ffsans;  
       a{
         color:$pblue;
         border:0;

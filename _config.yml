@@ -1,4 +1,4 @@
-exclude: resource, public, post, sass, build, test, config.rb, config.ru, Gemfile, Gemfile.lock, readme.md
+exclude: [resource, public, post, sass, build, test, config.rb, config.ru, Gemfile, Gemfile.lock, readme.md]
 permalink: /post/:title
-destination: public
+# destination: public
 

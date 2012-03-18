@@ -39,7 +39,7 @@ body code, body pre {
 }
 /* line 59, ../sass/screen.scss */
 body del {
-  color: #dddddd;
+  color: #999999;
 }
 /* line 66, ../sass/screen.scss */
 body h1, body h2, body h3, body h4, body h5, body h6,
@@ -106,11 +106,11 @@ body a:hover {
 /* line 111, ../sass/screen.scss */
 body img {
   padding: 25px 25px;
-  background: #dddddd;
+  background: #999999;
 }
 /* line 115, ../sass/screen.scss */
 body a:hover img {
-  background: #dddddd;
+  background: #aaaaaa;
 }
 /* line 118, ../sass/screen.scss */
 body br + a img {
@@ -187,18 +187,23 @@ body br + a img {
 #container #main #blog-toc #qotd {
   width: 575px;
   margin: 50px 0;
-  font-size: 37.5px;
-  color: #666666;
+  font-size: 27px;
+  color: #86320d;
+  font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
-/* line 220, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 #container #main #blog-toc #qotd.latin {
   font-style: italic;
 }
-/* line 225, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
+#container #main #blog-toc h1 {
+  margin: 0 0 50px 0;
+}
+/* line 229, ../sass/screen.scss */
 #container #main #blog-toc ul {
   padding-left: 0;
 }
-/* line 227, ../sass/screen.scss */
+/* line 231, ../sass/screen.scss */
 #container #main #blog-toc ul li {
   margin: 25px 0;
   height: 25px;
@@ -211,7 +216,7 @@ body br + a img {
   display: box;
   box-orient: horizontal;
 }
-/* line 231, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 #container #main #blog-toc ul li .postdate {
   font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
   display: inline-block;
@@ -222,21 +227,21 @@ body br + a img {
   font-style: italic;
   color: #86320d;
 }
-/* line 241, ../sass/screen.scss */
+/* line 245, ../sass/screen.scss */
 #container #main #blog-toc ul li .entrylink {
   font-size: 18px;
   max-width: 500px;
   display: block;
 }
-/* line 245, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 #container #main #blog-toc ul li .entrylink:hover {
   border: 0;
 }
-/* line 252, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 #container #main .entry-info {
   min-height: 75px;
 }
-/* line 254, ../sass/screen.scss */
+/* line 258, ../sass/screen.scss */
 #container #main .entry-info .pubdate {
   text-align: right;
   font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
@@ -245,7 +250,7 @@ body br + a img {
   font-style: italic;
   font-size: 18px;
 }
-/* line 262, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 #container #main .entry-info .date-year, #container #main .entry-info .date-month, #container #main .entry-info .date-weekday {
   line-height: 1;
   display: block;
@@ -253,111 +258,111 @@ body br + a img {
   float: right;
   margin-right: 12.5px;
 }
-/* line 268, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 #container #main .entry-info .date-year *, #container #main .entry-info .date-month *, #container #main .entry-info .date-weekday * {
   display: block;
 }
-/* line 275, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
 #container #main .entry-info .date-month .date-day {
   width: 15px !important;
 }
-/* line 277, ../sass/screen.scss */
+/* line 281, ../sass/screen.scss */
 #container #main .entry-info .date-month .date-day .day-name-hidden {
   display: none;
 }
-/* line 286, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 #container #main article {
   width: 575px;
   color: #333344;
 }
-/* line 291, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 #container #main article h1 {
   font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, "Hiragino Sans GB", sans-serif;
 }
-/* line 293, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 #container #main article h1 a {
   color: #003153;
   border: 0;
 }
-/* line 296, ../sass/screen.scss */
+/* line 300, ../sass/screen.scss */
 #container #main article h1 a:hover {
   color: #333344;
 }
-/* line 301, ../sass/screen.scss */
+/* line 305, ../sass/screen.scss */
 #container #main article a {
   border-bottom: 1px dotted #666666;
 }
-/* line 303, ../sass/screen.scss */
+/* line 307, ../sass/screen.scss */
 #container #main article a:hover {
   border-bottom: 1px solid #333344;
 }
-/* line 307, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 #container #main article .pic-comment {
   display: block;
   font-size: 12px;
   padding-left: 25px;
 }
-/* line 313, ../sass/screen.scss */
+/* line 317, ../sass/screen.scss */
 #container #main .footnotes {
   padding: 25px 0 0 50px;
   width: 250px;
 }
-/* line 316, ../sass/screen.scss */
+/* line 320, ../sass/screen.scss */
 #container #main .footnotes ol {
   padding: 0;
   margin: 0;
   font-size: 18px;
   font-style: italic;
   letter-spacing: -1px;
-  color: #dddddd;
+  color: #999999;
 }
-/* line 323, ../sass/screen.scss */
+/* line 327, ../sass/screen.scss */
 #container #main .footnotes ol li {
   padding: 0 0 4px 6px;
   margin: 0 0 4px -6px;
   letter-spacing: 0;
 }
-/* line 327, ../sass/screen.scss */
+/* line 331, ../sass/screen.scss */
 #container #main .footnotes ol li div {
   color: #666666;
   font-style: normal;
   font-size: 12px;
   line-height: 20px;
 }
-/* line 337, ../sass/screen.scss */
+/* line 341, ../sass/screen.scss */
 #container blockquote {
   padding: 25px 25px;
   background: url(../img/quoteleft.png) top left no-repeat, url(../img/quoteright.png) bottom right no-repeat;
 }
-/* line 340, ../sass/screen.scss */
+/* line 344, ../sass/screen.scss */
 #container blockquote > *:first-child {
   margin-top: 0;
 }
-/* line 343, ../sass/screen.scss */
+/* line 347, ../sass/screen.scss */
 #container blockquote > *:last-child {
   margin-bottom: 0;
 }
 
-/* line 349, ../sass/screen.scss */
+/* line 353, ../sass/screen.scss */
 footer {
   min-height: 375px;
   background: #003153 url(../img/footerbg.png) top left;
-  color: #dddddd;
+  color: #999999;
   padding: 25px 0 25px 175px;
 }
-/* line 354, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 footer h2 {
   margin-top: 0;
 }
-/* line 357, ../sass/screen.scss */
+/* line 361, ../sass/screen.scss */
 footer nav {
   margin-bottom: 25px;
 }
-/* line 361, ../sass/screen.scss */
+/* line 365, ../sass/screen.scss */
 footer nav#blogroll h2, footer nav#existentials h2 {
   height: 25px;
 }
-/* line 364, ../sass/screen.scss */
+/* line 368, ../sass/screen.scss */
 footer nav#blogroll ul, footer nav#existentials ul {
   background: rgba(0, 0, 0, 0.3);
   padding: 25px 25px;
@@ -365,27 +370,27 @@ footer nav#blogroll ul, footer nav#existentials ul {
   display: inline-block;
   min-width: 150px;
 }
-/* line 370, ../sass/screen.scss */
+/* line 374, ../sass/screen.scss */
 footer nav#blogroll ul li:hover, footer nav#existentials ul li:hover {
   list-style: disc;
 }
-/* line 374, ../sass/screen.scss */
+/* line 378, ../sass/screen.scss */
 footer nav#blogroll a, footer nav#existentials a {
-  color: #dddddd;
+  color: #999999;
 }
-/* line 376, ../sass/screen.scss */
+/* line 380, ../sass/screen.scss */
 footer nav#blogroll a:hover, footer nav#existentials a:hover {
   color: #fff;
 }
-/* line 381, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 footer nav#existentials {
   line-height: 0;
 }
-/* line 384, ../sass/screen.scss */
+/* line 388, ../sass/screen.scss */
 footer nav#existentials h2 {
   line-height: 1;
 }
-/* line 387, ../sass/screen.scss */
+/* line 391, ../sass/screen.scss */
 footer nav#existentials ul {
   padding-bottom: 0;
   padding-right: 0;
@@ -393,37 +398,37 @@ footer nav#existentials ul {
         margin-right:$gwidth;
      } */
 }
-/* line 390, ../sass/screen.scss */
+/* line 394, ../sass/screen.scss */
 footer nav#existentials ul li:hover {
   list-style: none;
 }
-/* line 393, ../sass/screen.scss */
+/* line 397, ../sass/screen.scss */
 footer nav#existentials ul #github a {
   background-position-x: -810px;
 }
-/* line 396, ../sass/screen.scss */
+/* line 400, ../sass/screen.scss */
 footer nav#existentials ul #flickr a {
   background-position-x: -270px;
 }
-/* line 399, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 footer nav#existentials ul #twitter a {
   background-position-x: -180px;
 }
-/* line 402, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 footer nav#existentials ul #facebook a {
   background-position-x: -450px;
 }
-/* line 405, ../sass/screen.scss */
+/* line 409, ../sass/screen.scss */
 footer nav#existentials ul #linkedin a {
   background-position-x: -900px;
 }
-/* line 408, ../sass/screen.scss */
+/* line 412, ../sass/screen.scss */
 footer nav#existentials ul li {
   display: block;
   float: left;
   margin: 0 25px 25px 0;
 }
-/* line 412, ../sass/screen.scss */
+/* line 416, ../sass/screen.scss */
 footer nav#existentials ul li a {
   background: url("../img/picons-social.png") top left no-repeat;
   display: block;
@@ -431,7 +436,7 @@ footer nav#existentials ul li a {
   width: 50px;
   text-indent: -32767px;
 }
-/* line 418, ../sass/screen.scss */
+/* line 422, ../sass/screen.scss */
 footer nav#existentials ul li a:hover {
   border: 0;
   background-position-y: -59px !important;

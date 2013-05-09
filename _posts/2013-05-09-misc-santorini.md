@@ -86,7 +86,7 @@ layout: post
 </p>
 
 <p>
-<a href="http://www.flickr.com/photos/lonelyfox/8714705889/" title="Unbenannt von Metaphox bei Flickr"><img src="http://farm8.staticflickr.com/7288/8714705889_d7d2541a02.jpg" width="500" height="374" alt="Unbenannt"></a>
+<a href="http://www.flickr.com/photos/lonelyfox/8714705889/" title="Ia落日下的亲吻 von Metaphox bei Flickr"><img src="http://farm8.staticflickr.com/7288/8714705889_35a7a0f1f3.jpg" width="500" height="355" alt="Ia落日下的亲吻"></a>
 </p>
 
 晚上沿着另一条田野间的公路回Fira，一路上两次错过路口，不得不在漆黑中掏出手机定位，就着车灯看地图找路。回到青旅坐在阳台上上网，四个喝醉的英国姑娘在对面露台上大声笑骂各自的前男友。

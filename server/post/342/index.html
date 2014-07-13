@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>下贱导向编程指引 | Metamorphosis</title>
+  <meta name="description" content="Metaphox's personal blog">
+  <meta name="author" content="Metaphox">
+
+<!-- disable this before responsive is done
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  -->
+
+  <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC|IM+Fell+DW+Pica+SC|Bowlby+One+SC' rel='stylesheet'>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="stylesheet" href="/css/disqus.css">
+
+  <link rel="alternate" type="application/rss+xml" title="Metamorphosis" href="/feed.rss" />
+</head>
+
+<body class="nowireframe">
+  <div id="grid-columns">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+    <div id="container">
+    <header id="siteheader">
+	    <div id="sitename"><a href="/">Metamorphosis</a></div/>
+      <div id="feed"><a href="/feed.rss">RSS feed</a></div>
+    </header>
+    <div id="main" role="main">
+    <div id="wrapper">
+<article>
+  <h1><a href="/post/342">下贱导向编程指引</a></h1>
+  <p><a href="http://typicalprogrammer.com/programming/abject-oriented/">原文</a>	作者Greg Jorgensen。</p>
+
+<p>Metaphox译</p>
+
+<p><strong>下贱导向编程（Abject-Oriented Programming）</strong>，指能增加代码复用率，并敦促程序员写出经久耐用之源代码的一系列手段。源代码行数是衡量软件重要性的通用标准，程序员每日、周、月能写出多少行源代码，亦为项目规划和资源分配的常用凭据。而下贱导向编程正是在最短的时间内得到最多代码的最佳手段之一。</p>
+
+<p><em>Abject: utterly hopeless, miserable, humiliating, or wretched: abject poverty. </em></p>
+
+<p><strong>继承</strong></p>
+
+<p>继承是在新代码中保持旧有代码特性的手段。程序员通过现有函数或程序块衍生新代码的方式是，将代码复制一份，继而加以修改。</p>
+
+<p>衍生出的代码一般通过增加原有代码未实现的特性而将功能专门化。这样一来旧有代码保留不变，新代码继承而来。</p>
+
+<p>使用继承手段写出来的程序，其特征是源代码由相似的代码块构成，而细微差别随处可见。继承的另一个标志是静态成员，即那些不被一个程序块本身所使用或引用，而是仅用以维系与该程序块的“基代码”或“父代码”之联系的变量和代码。</p>
+
+<p>继承关系的伪代码例子：</p>
+
+<pre>
+function getCustName(custID){
+    custRec = readFromDB("customer", custID);
+    fullname = custRec[1] + ' ' + custRec[2];
+    return fullname;
+}
+</pre>
+<pre>
+function getCustEmail(custID){
+    custRec = readFromDatabase("customer", custID);
+    fullname = custRec[1] + ' ' + custRec[2];
+    /***************
+    * 4/15/96 git : email address stored in
+    * second fax field
+    ***************/
+    return custRec[17];
+}
+</pre>
+<p>为了给应用程序添加email地址功能，getCustEmail函数继承getCustName函数。通过继承我们复用了能工作的代码且少有引入bug的风险。</p>
+<p>子类型转化也是一种继承关系，即继承自旧有代码的变量，其类型被转化。</p>
+<p><strong>模块化</strong></p>
+<p>程序模块化，指将源程序分割为若干文件而在各文件起始共享通用注释块。一个模块通常包括：</p>
+<ul>
+<li>版权声明</li>
+<li>免责声明</li>
+<li>三到五行星号</li>
+<li>代码变更记录</li>
+<li>对该模块本来打算做什么的描述</li>
+<li>再三到五行星号</li>
+<li>以星号或其他字符包含的大块空白，内含每一函数或子例程的名称，作者的名字或缩写，以及最初编辑时间</li>
+<li>代码</li>
+</ul>
+<p>
+模块通常保持在合理的大小以减少耦合度并增加强健性。若某模块变得太大，应将其分割为小块，并从原来的模块中复制版权声明、免责声明等等到各小块中。在衍生新的模块时，注释总是可以被安全地继承，所以复制所有注释最安全。
+</p>
+<p><strong>组件与库</strong></p>
+
+<p>
+下贱导向编程倾向于使用插件式组件——从书上或网上找到的小段代码。聪明的程序员可以通过使用搜索引擎找到各种功能的预制组件，从而节省时间。最好的组件是黑箱，即程序员不知道也不关心组件是怎样运作的。许多大型应用程序是通过继承其他程序及从网上搜集组件而构建的。
+</p>
+
+<p><strong>封装</strong></p>
+
+<p>
+封装的意义在于分离数据和代码。有时这叫数据隐藏，但是数据并未被真正隐藏，只不过被保护在另一层代码内罢了。比如，在程序中到处写数据库查询是不好的，而下贱的解决手段是将数据库包装或隐藏在程序或子例程内，从而将数据库封装。上例的getCustName函数中，数据库并未被直接查询——我们调用了一个函数来查询数据库。getCustName和getCustEmail所“知道”的东西就是在客户记录的什么地方可以找到它们需要的那点数据。至于怎么读出客户记录，是封装在其他模块中的功能。
+</p>
+<p>
+有些编程语言允许用户声明变量为private、public或protected，但这并非下贱编程的手法。某模块的内部变量将来是否会用于实现新特性，模块作者无从知晓，故程序员应该将所有变量设为public或global，并让代码的其它部分决定什么应不应该是私有的。
+</p>
+
+<p><strong>多态</strong></p>
+
+<p>
+学习下贱导向技法时，程序员经常卡在多态上。多态听起来挺难，但其实很简单，而且易于实现。如果一段代码根据不同的输入给出不同的输出，那么它就具有多态性。
+</p>
+<p>
+作为例子，我们可以将上例的函数转写为多态函数，方法是将运行良好的代码继承，然后封装为一个新函数：
+</p>
+<pre>
+function getCustData(custId, what){
+    if (what == 'name') {
+        custRec = readFromDB("customer", custId);
+        fullname = custRec[1] + ' ' + custRec[2];
+        return fullname;
+    } else if (what == 'email') {
+        custRec = readFromDB("customer", custId);
+        fullname = custRec[1] + ' ' + custRec[2];
+        /***************
+        * 4/15/96 git : email address stored in
+        * second fax field
+        ***************/
+        return custRec[17];
+    }
+
+    /* ... etc. */
+}</pre>
+<p>你可能还记得计算机课上学过的非确定性和图灵有限状态机，这些概念都和多态相关。</p>
+
+<p><strong>Is-A 与 Has-A</strong></p>
+<p>
+这是优秀的下贱导向设计之精妙所在。刚开始学习下贱导向要义的程序员试图将代码以继承方式组织（“是一个”），而更有经验的程序员会发现“有一个”关系常常更为适用。上述例子中，每个客户都有名字，但custRec是一条数据库记录。
+</p>
+<p><strong>虚类和虚函数</strong></p>
+
+<p>
+所谓虚类或虚函数是指应用程序以后需要，但是目前还没写的代码。这通常以提供一个能被以后的代码所扩展的基类来成：
+</p>
+<pre>
+function calcSalesTax(price, isTaxable, state) {
+    /****************************************
+    *
+    * TO DO:
+    *
+    * get tax rate for the customer state
+    * eventually from some table
+    *
+    *
+    ****************************************/
+
+    /** 02/07/99 git -- use WA rate for now **/
+    return price * (7.25 / 100.0);
+}
+</pre>
+<p>
+所谓“脆弱基类”是指已经存在于应用程序中很久的类或者模块，对它们做出任何微小修改都会毁掉程序的其他部分。
+</p>
+
+<p><strong>重载</strong></p>
+
+<p>
+重载是指一个模块或者代码块能够完成不只一项工作，比如一个能够获取用户的名字，email地址，以及州消费税率的子例程就使用了重载。重载可以减少方法调度，后者正是其他编程风格所产生的代码效率不高的原因。
+</p>
+
+<p><strong>文档</strong></p>
+
+<p>
+据说代码应该写得让人能读懂，依此推论，文档就不是写给别人看的。应该为每个新模块写文档，然后在做出的改变真能被用到的时候更新文档，至少也应该在下次不那么忙的工作间隙更新一下。
+</p>
+<p>
+部门中的某人还有两周就要闪人的时候是写文档的好时机，这段时间里应该确保将要离开的小组成员为其全部代码写好了文档。
+</p>
+<p>
+散落于代码各处，解释代码在做什么的注释让人分心，也会让编译变慢。这就是为什么进行“最佳实践”的下贱工作组将所有文档放在文档管理系统中：这样一来程序员就不能意外地删除它们了。
+</p>
+
+<p><strong>版本控制</strong></p>
+
+<p>
+版本控制本身并非编程手段，但是各下贱编程项目组倾向于使用相似的版本控制方法。把之前版本的代码妥善保存，跟踪对代码的改变，是哪怕只有一个程序员在写代码的时候也很重要的事情。富有经验的下贱程序员会使用类似这样的系统：
+</p>
+<ul>
+<li>每次要把自己的名字缩写以及最后修订日期放在源代码文件首部。</li>
+<li>当意识到自己的修改大到足以导致回溯困难，就把源码做个.bak拷贝。</li>
+<li>整理多个备份的方法是将自己的名字缩写以及日期附加到备份文件名后面： custdata_git20040321.bak。</li>
+<li>所有备份文件都应放在与所修改的源代码相同的目录中，以便看到每个文件的历史。</li>
+</ul>
+<p><strong>结论</strong></p>
+<p>
+你可能会发现，多数现存的软件小组都或多或少地采用上述下贱导向编程手段。流行一时的什么敏捷或者“极限”编程来来往往，但只有下贱风格经得起时间的考验。项目经理熟悉下贱编程手段，并且也将要求你能够适应他们既有的下贱导向编程基础。</p>
+<p><strong>作者简介</strong></p>
+
+<p>Greg Jorgensen是典型的程序员，自1974年开始编程，涉及BASIC，Fortran，COBOL，以及汇编。他也做过编程之外的事，为nike和apple等等公司工作过。现在他工作于Portland的Inspiration Software，开发教学产品，也做些签约编程。</p>
+
+<p><strong>译者说明</strong></p>
+
+<p>本文是搞笑之作，方式比较geek。所谓Abject-Oriented是对Object Oriented的恶搞，后者是一种编程的范式（paradigm），大陆通常译作“面向对象”，台湾则作“物件导向”，文中的继承、多态等均为该范式的术语。在翻译时我一开始也试图对“面向对象”一词恶搞，但很难找到与abject对应的、可以“面向”的词汇，勉强作“面向猥琐”，但是原作的谐音趣味就没了。后来想到台湾的译法，遂定为“下贱导向”。如果谁有更好的主意，请不吝赐教。</p>
+
+  <hr />
+  <div id="disqus">  </div>
+</article>
+<aside class="entry-info">
+  <div class="pubdate">published 21 Jun 2007</div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'metaphoxite'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+  
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</aside>
+</div>
+
+    </div><!--//#main-->
+  </div> <!--! end of #container -->
+  <footer>
+   <nav id="existentials">
+  <h2>Existentials</h2>
+  <ul>
+    <li id="github"><a href="https://github.com/metaphox">github</a></li>
+    <li id="flickr"><a href="http://www.flickr.com/photos/lonelyfox/">flickr</a></li>
+    <li id="twitter"><a href="https://twitter.com/#!/metaphox">twitter</a></li>
+    <li id="facebook"><a href="http://www.facebook.com/metaphox">facebook</a></li>
+    <li id="linkedin"><a href="http://www.linkedin.com/pub/tao-wu/20/296/930">linkedin</a></li>
+  </ul>
+</nav>
+<nav id="blogroll">
+  <h2>Blogroll</h2>
+  <ul id="group1">
+    <li><a href="http://wondermore.blogspot.com/" rel="friend met" title="a.k.a. did">wonderfulmore</a></li>
+    <li><a href="http://zixiaoshu.spaces.live.com/" rel="friend met" title="亮子">北京人在悉尼</a></li>
+    <li><a href="http://sukie_zhao.blog.tianya.cn" rel="fiend met" title="为晴雪所洗">sukie赵</a></li>
+    <li><a href="http://www.cjpanda.com/life/" rel="friend met" title="the CJ.">cjPanda</a></li>
+    <li><a href="http://biantaishabi.com/blog/" rel="friend" title="变态傻逼">btsb</a></li>
+    <li><a href="http://hsiaoweichan.blogspot.com/" rel="" title="friend met">vivian</a></li>
+    <li><a href="http://cityyoho.blogbus.com/" rel="friend met" title="灭绝">cityyoho</a></li>
+  </ul><ul id="group2">
+    <li><a href="http://weblog.bororo.org/" rel="acquaintance" >maple</a></li>
+    <li><a href="http://tianjintianjin.yculblog.com/" rel="friend met" title="猜错的大多数">tulip</a></li>
+    <li><a href="http://tankliang.blogbus.com/" rel="friend" >坦克梁</a></li>
+    <li><a href="http://hi.baidu.com/stone9" rel="friend" title="goddamner">stone</a></li>
+    <li><a href="http://hi.baidu.com/pavements84" rel="friend met" title="老妹">pavements</a></li>
+    <li><a href="http://blog.sinzy.net/changke" rel="friend met" title="天魔的家">问号鱼</a></li>
+    <li><a href="http://gilbertbeilschmidt.blog124.fc2.com/" rel="friend" title="小章鱼">Schlaraffenland</a></li>
+  </ul><ul id="group3">
+    <li><a href="http://www.post-concrete.com/blog/" rel="friend" title="Institute of East Asiatic Venomology">東亞毒液學研究所</a></li>
+    <li><a href="http://asukashinjirei.blogbus.com/" rel="friend" title="杨不风">草木贲华</a></li>
+    <li><a href="http://www.upshine.net/blog/" rel="friend met" title="Rex">三楼的卡西欧计算器</a></li>
+    <li><a href="http://kornephoros.de/" rel="friend" title="天市右垣一">追忆吹水年华</a></li>
+    <li><a href="http://k1oe.me/" rel="friend" title="Chloe">bad habits die hard</a></li>
+    <li><a href="http://howlongisnow.com/" rel="friend" title="大头怪阿姨">多说无益</a></li>
+    <li><a href="http://lawrence.li/blog/" rel="friend" title="Lawrence Li">一天世界</a></li>
+    <li><a href="http://blog.doigoi.com/" rel="friend" title="橙">得果德语</a></li>
+  </ul>
+</nav><!--/#blogroll-->
+ 
+  </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.6.2.min.js"><\/script>');</script>
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="/js/plugins.js"></script>
+  <script defer src="/js/script.js"></script>
+  <!-- end scripts-->
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <script>/*
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    }); */
+  </script>
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>

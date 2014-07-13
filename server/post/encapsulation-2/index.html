@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>封装（下） | Metamorphosis</title>
+  <meta name="description" content="Metaphox's personal blog">
+  <meta name="author" content="Metaphox">
+
+<!-- disable this before responsive is done
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  -->
+
+  <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC|IM+Fell+DW+Pica+SC|Bowlby+One+SC' rel='stylesheet'>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="stylesheet" href="/css/disqus.css">
+
+  <link rel="alternate" type="application/rss+xml" title="Metamorphosis" href="/feed.rss" />
+</head>
+
+<body class="nowireframe">
+  <div id="grid-columns">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+    <div id="container">
+    <header id="siteheader">
+	    <div id="sitename"><a href="/">Metamorphosis</a></div/>
+      <div id="feed"><a href="/feed.rss">RSS feed</a></div>
+    </header>
+    <div id="main" role="main">
+    <div id="wrapper">
+<article>
+  <h1><a href="/post/encapsulation-2">封装（下）</a></h1>
+  <p>人类的先进或曰悲剧之处，在于积累知识和制造工具。故而历史上必定有过某一个时刻，一切被记录下来的知识还有被制造出来的工具，从此超越了人类穷尽一生能够掌握的界限。于是世上不再可能有真正的通才，而很久之后，当扔向天空的一根骨头变成了航天梭，我们发现自己面临着怎么向别人解释自己的职业这一难题。尤其是从事的职业缺乏可见成果时，能精确扼要地告诉外人自己的工作内容，几乎可以算是一种才华，正如把自己掌握的知识传授给别人同样是一种才华。
+</p><p>
+曾经给我买玩具的爸爸如今已经老了，也不再显得那么全知全能，虽然好奇心还是存在的。去年刚找到工作的那会儿，他老人家每次打电话时都会问，你的工作是干什么的？你的工作具体是干什么的？你的工作到底是干什么的？而我支支吾吾的回答永远无法令他满意：
+</p><p>
+「呃，我的公司是一个市场调研集团下属的…… 数据处理公司…… 我的职业是开发人员…… 嗯，就是写程序的。写…… 呃，结构化查询语言代码…… 和，唔，一种…… 脚本语言的代码。为什么要用两种语言？啊，好问题…… 不，代码不一定是程序…… 或者说代码不等同于程序，取决于你对程序这个词的定义。我用什么软件？和写字板差不多…… 不，不是word…… 我讨厌word，你最好也别用了…… 我做什么软件？这个…… 你听说过甲骨文吧…… 对，那个数据库公司…… 我跟他家的产品打交道。我写的代码在那里面跑。啊？那我为什么不去甲骨文？！呃，这个，我会用Google并不意味着我就具备能去Google工作的资质吧……」
+</p><p>
+凡此对话往复若干次，终究让爸爸放弃理解我的工作细节的努力。虽然后来我意识到，这些问题背后，他最好奇的那个元问题其实是：「你回国的话，能找到工作吗？」，而且这个问题的答案，并非我说他就会信，而必须是经由他自行分析我提供的信息得出来的才可以。这种行为背后的逻辑，就是遇到想要了解的东西，能拆开的一定要拆开，能追问的一定要追问。我不能幸免地继承了这个打破砂锅问到底的习惯，这造成了我人生的许多困扰，也导致我在修电脑、做好人的泥潭里越陷越深，只因电脑作为一口砂锅，可以碎成太多块了。
+</p><p>
+在你面对的这台电脑里面，有一根或者几根内存条，每一根上面都有几十亿个晶体管。在某一刹那，两个彼此相邻的晶体管，一个存放着1，另一个也存放着1。或许这一个里面正在流通的电子总量要少于那一个，但对于内存控制器来说，它们都是1。不过，尽管它们彼此紧邻，值亦相等，却有可能一个属于你正在看的那张美女图的敏感部位的一个像素的绿色分量，另一个则属于你正打算完成的那篇金融学作业的电子文档的脚注。从硅片上的电路到荧幕上的色块之间发生了很多事——因为实体内存有限，而你的贪欲无限，所以计算机被设计得极为复杂，以便让有限的资源满足你又要听歌又要看美女又要写作业的多任务需求。在单独一台计算机上进行所谓「多任务」其实是相当虚妄的东西，因为在某个特定时刻，一颗CPU只能做一件事。所幸欺骗人类大脑很容易，与电影院每秒播放24帧静态图像就能让观众产生「动画」的错觉原理相似，操作系统高速地在不同的程序之间切换，你就产生了它在同时做许多事情的错觉。但是，为了高速地在不同的程序之间切换，内存条必须在逻辑上被分割开来供给不同的任务使用，比如浏览器甲使用二百兆，字处理软件乙使用八十兆，音乐播放器丙使用二十兆。但是浏览器和字处理软件和音乐播放器都不是省油的灯，我的意思是，省内存的软件，以为用户服务的名义，它们都不觉得再多要一点内存有什么错。「操作系统先生，我是chrome，用户打开了一个叫做pornhub点com的网站，请再给我十兆内存，谢谢。」「操作系统先生，我是flash，chrome告诉我说用户要播放一个视频，请再给我二十兆内存，谢谢。」操作系统先生忙得面红耳赤，心神不宁，眼看着实体内存就要用光了，而手下还有一堆嗷嗷待哺的后台进程，只好瞒天过海，把那些之前以用户目前没有在使用的程序所需要的内存内容先放到硬盘上，等用户切换回去的时候再把它们调回来。但是这一切都不能让程序们知道——对于每个程序来说，能使用的内存空间都是从0到某个2的n次方值，可是这只不过是操作系统捏造的假象罢了。数据事实上被存放在内存条的哪里，什么时候被移到硬盘上，什么时候又会被移回来，都是它们不可知的事情。于是内存上的两个小小的可怜的不起眼的晶体管明明彼此相邻，但是命运让它习惯向左走，它习惯向右走，它们始终不曾相遇。
+</p><p>
+问题是，除了病毒木马之外，普通程序对于实体内存的分配结构也的确毫无兴趣——它们自己有更多需要操心的事情，比如怎么解压那段mp3，怎么给这列单元格求和，怎么发现你输入的那个单词拼错了，还有很头痛的怎么跟别的程序通信。这些东西，经过层层包装和抽象，已经和那两个小小的晶体管没什么关联，就如同写在书上的思想同化身为纸张的那些树木没有什么关联。0和1不一定要用晶体管或者真空管存储，用乐高积木也可以：
+</p>
+<p><object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/cYw2ewoO6c4&hl=de_DE&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/cYw2ewoO6c4&hl=de_DE&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object><br /><span class="pic-comment">乐高积木做成的图灵机</span><br /><br />
+或者干脆就写在纸上：
+<br /><br /><object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/2PjU6DJyBpw&hl=de_DE&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/2PjU6DJyBpw&hl=de_DE&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object><br /><span class="pic-comment">最为接近原始设计的图灵机，使用纸带和笔</span></p>
+<p>
+而且计算机并不一定得是二进制的，世界上也有过<a href="http://en.wikipedia.org/wiki/Setun">三进制计算机</a>，如果当初这玩意能幸存并且发展下来，没有什么理由怀疑有什么事情二进制计算机能做到的它却不能做到。因为高层的东西不依赖于底层而存在，底层向高层封装自己实现的细节，这是一切计算机设计的基本理念。作为科学的计算机学和作为工程学的计算机制造业之间的耦合因此其实很松散，<em>Computer science is no more about computers than astronomy is about telescopes</em>，荷兰科学家Edsger W. Dijkstra曾经如是说。
+</p><p>
+当计算机告别它那个用户全都是程序员的襁褓时代，程序员们发现自己除了要理解比较低级的封装，还要制造更高级的封装，而最终目的就是如何让非程序员的用户们不必去理会什么内存管理、任务调度和网络通信，而是简单地按下一个按钮就能完成一项工作，从而让克拉克第三定律——<em>any sufficiently advanced technology is indistinguishable from magic</em>——锦上添花。不过，这群程序员「协同」得并不轻松，因为每个程序员对「封装点」或曰「抽象层级」的容忍程度都是不一样的，所以喜欢和电脑打交道的层次也不一样。对于许多人来说，超出其舒适范围的抽象点都是可鄙的，不管更高还是更低。代表性的言论比如：「我亲手写代码，架构师那套都是花架子」 vs. 「我只负责设计，写代码是民工的事。」，或者「JavaScript 是玩具」 vs. 「写C的都活在石器时代」。一个比较泛化的版本是，「某某工具吸吮」，这里的工具可以是代码编辑器，或者某种编程语言，或者某种编程范式（programming paradigm）。吸吮的原因一二三四五，必然有跟复杂性隐含太多/暴露太少相关的一条，就好比美女穿衣服，登徒子会觉得穿太多，卫道士会觉得穿太少。
+</p><p>
+我朝出过很多古人，说过许多经典的话，可惜我最喜欢的一句不知道是出自谁口。这句话是：自己撒泡尿照照镜子。我喜欢这句话的原因是，除了能够用来嘲笑他人之外，这句话尚有很强烈的自省作用，盖因撒尿是很私人的事情，便溺又是龌龊的东西，所以默念这句话，可以提醒我要在私底下看到自己的龌龊。每当我心底涌起一股对超出自己容忍范围的封装点之嫌恶，我就会默念这句话，提醒自己所知甚少，阅历不够，这种情绪对步入中年人生于事无补。
+</p><p>
+当然，嘲笑他人同样是非常重要的。何况我们多数情况下只是想要吐槽罢了。这世界上有许多事情是我们没有精力和兴趣去弄明白的，如果连笑一下都不行，还不如去革命算了。
+</p>
+  <hr />
+  <div id="disqus">  </div>
+</article>
+<aside class="entry-info">
+  <div class="pubdate">published 09 Apr 2010</div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'metaphoxite'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+  
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</aside>
+</div>
+
+    </div><!--//#main-->
+  </div> <!--! end of #container -->
+  <footer>
+   <nav id="existentials">
+  <h2>Existentials</h2>
+  <ul>
+    <li id="github"><a href="https://github.com/metaphox">github</a></li>
+    <li id="flickr"><a href="http://www.flickr.com/photos/lonelyfox/">flickr</a></li>
+    <li id="twitter"><a href="https://twitter.com/#!/metaphox">twitter</a></li>
+    <li id="facebook"><a href="http://www.facebook.com/metaphox">facebook</a></li>
+    <li id="linkedin"><a href="http://www.linkedin.com/pub/tao-wu/20/296/930">linkedin</a></li>
+  </ul>
+</nav>
+<nav id="blogroll">
+  <h2>Blogroll</h2>
+  <ul id="group1">
+    <li><a href="http://wondermore.blogspot.com/" rel="friend met" title="a.k.a. did">wonderfulmore</a></li>
+    <li><a href="http://zixiaoshu.spaces.live.com/" rel="friend met" title="亮子">北京人在悉尼</a></li>
+    <li><a href="http://sukie_zhao.blog.tianya.cn" rel="fiend met" title="为晴雪所洗">sukie赵</a></li>
+    <li><a href="http://www.cjpanda.com/life/" rel="friend met" title="the CJ.">cjPanda</a></li>
+    <li><a href="http://biantaishabi.com/blog/" rel="friend" title="变态傻逼">btsb</a></li>
+    <li><a href="http://hsiaoweichan.blogspot.com/" rel="" title="friend met">vivian</a></li>
+    <li><a href="http://cityyoho.blogbus.com/" rel="friend met" title="灭绝">cityyoho</a></li>
+  </ul><ul id="group2">
+    <li><a href="http://weblog.bororo.org/" rel="acquaintance" >maple</a></li>
+    <li><a href="http://tianjintianjin.yculblog.com/" rel="friend met" title="猜错的大多数">tulip</a></li>
+    <li><a href="http://tankliang.blogbus.com/" rel="friend" >坦克梁</a></li>
+    <li><a href="http://hi.baidu.com/stone9" rel="friend" title="goddamner">stone</a></li>
+    <li><a href="http://hi.baidu.com/pavements84" rel="friend met" title="老妹">pavements</a></li>
+    <li><a href="http://blog.sinzy.net/changke" rel="friend met" title="天魔的家">问号鱼</a></li>
+    <li><a href="http://gilbertbeilschmidt.blog124.fc2.com/" rel="friend" title="小章鱼">Schlaraffenland</a></li>
+  </ul><ul id="group3">
+    <li><a href="http://www.post-concrete.com/blog/" rel="friend" title="Institute of East Asiatic Venomology">東亞毒液學研究所</a></li>
+    <li><a href="http://asukashinjirei.blogbus.com/" rel="friend" title="杨不风">草木贲华</a></li>
+    <li><a href="http://www.upshine.net/blog/" rel="friend met" title="Rex">三楼的卡西欧计算器</a></li>
+    <li><a href="http://kornephoros.de/" rel="friend" title="天市右垣一">追忆吹水年华</a></li>
+    <li><a href="http://k1oe.me/" rel="friend" title="Chloe">bad habits die hard</a></li>
+    <li><a href="http://howlongisnow.com/" rel="friend" title="大头怪阿姨">多说无益</a></li>
+    <li><a href="http://lawrence.li/blog/" rel="friend" title="Lawrence Li">一天世界</a></li>
+    <li><a href="http://blog.doigoi.com/" rel="friend" title="橙">得果德语</a></li>
+  </ul>
+</nav><!--/#blogroll-->
+ 
+  </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.6.2.min.js"><\/script>');</script>
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="/js/plugins.js"></script>
+  <script defer src="/js/script.js"></script>
+  <!-- end scripts-->
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <script>/*
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    }); */
+  </script>
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>

@@ -1,0 +1,7 @@
+---
+title: 在Shell下如何打开Python源文件？
+layout: post
+---
+ 这个可以折腾一天哇？兄弟你辛苦了。<br><br>方法一： <br>python helloworld.py 不行的话，试试<br>/usr/bin/python helloworld.py<br>如果还是不行，试试<br>which python<br>然后试试其中的结果<br><br>方法二：<br>编辑 helloworld.py， 在文件<b>第一行</b>顶头写<br>#!/usr/bin/env python<br>然后在命令行下面 chmod 755 helloworld.py<br>接下来就可以直接 ./helloworld.py 
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19692118/answer/12667921">https://www.zhihu.com/question/19692118/answer/12667921</a></p>

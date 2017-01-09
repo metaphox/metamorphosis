@@ -1,0 +1,9 @@
+---
+title: 收到一张明信片，有一行字（图中画横线的）同学说是经典凯撒密码，我理解不了，有人能帮忙解答一下么?
+layout: post
+---
+<noscript><img src="https://pic2.zhimg.com/22d5c55d016486c6a2d827d7cf35ff05_b.jpg" data-rawwidth="570" data-rawheight="490" class="origin_image zh-lightbox-thumb" width="570" data-original="https://pic2.zhimg.com/22d5c55d016486c6a2d827d7cf35ff05_r.jpg">把每个字母用其字母表上的前一位替换，得到</noscript><img src="//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg" data-rawwidth="570" data-rawheight="490" class="origin_image zh-lightbox-thumb lazy" width="570" data-original="https://pic2.zhimg.com/22d5c55d016486c6a2d827d7cf35ff05_r.jpg" data-actualsrc="https://pic2.zhimg.com/22d5c55d016486c6a2d827d7cf35ff05_b.jpg">把每个字母用其字母表上的前一位替换，得到<br>「HAIPADALEIZECMEBAN」，应该是「害怕打雷怎么办」，而且好像拼错了。<br><br>更新：经提醒图中倒数第六个字母是O而不是D，所以不是她拼错了，是我看错了。<br><br>&lt;del&gt;若是女生写的大概你应该追一追。&lt;/del&gt;<br><br>=== just for fun ===<br><br><div class="highlight"><pre><code class="language-text">for i in range(26): print ''.join(map(lambda x: chr(65 + ((ord(x) + i) % 26) ), 'IBJQBEBMFJAFDNFCBO'))
+</code></pre></div><br><br><div class="highlight"><pre><code class="language-text">(1..26).each{|n| p 'HAIPADALEIZECMEBAN'.split('').map { |c| (65 + (c.ord + n)%26).chr }.join()}
+</code></pre></div>
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/21095471/answer/17166787">https://www.zhihu.com/question/21095471/answer/17166787</a></p>

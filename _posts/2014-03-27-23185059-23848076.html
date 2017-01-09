@@ -1,0 +1,36 @@
+---
+title: 可以用 Python 写只暴露一个 function 的模块吗？
+layout: post
+---
+如果你是问在 module 中定义多个函数并选择性地暴露其中一个的话，答案是「严格来说不可以」。你可以用单下划线来定义 module 的私有成员，从而防止它们被自动导入：<br><div class="highlight"><pre><code class="language-python"><span class="c">#file 'test.py'</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">'foo'</span>
+
+<span class="k">def</span> <span class="nf">_bar</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">'_bar'</span>
+</code></pre></div><br>此时 from test import * 只会导入 foo，而 import test 只会导入 test.foo 。但是你仍旧无法阻止别人显式地 from test import _bar 。详细原因参见 <a href="http://www.zhihu.com/question/20030486/answer/23636514" class="internal">一个 Pythonic 的类应不应该在 __init__ 中检查参数有效性？</a> 中的答案。<br><br>又或者你可以只在 module 里定义单一一个函数，所需其他函数均在此类中定义。<br><div class="highlight"><pre><code class="language-python"><span class="c">#file 'test.py'</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+        <span class="k">print</span> <span class="s">'bar in foo'</span>
+    <span class="n">bar</span><span class="p">()</span>
+</code></pre></div><br>又或者既然 class 可以写成 callable 的，那也可以当作函数用：<br><div class="highlight"><pre><code class="language-python"><span class="c">#file 'test.py'</span>
+<span class="k">def</span> <span class="nf">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">"foo"</span>
+</code></pre></div><br><div class="highlight"><pre><code class="language-text">#__main__:
+&gt;&gt;&gt; from test import *
+&gt;&gt;&gt; f = Foo()
+&gt;&gt;&gt; f()
+foo
+</code></pre></div><br>Python 里面 module 不能成为 callabe object，所以如果要让 module 能当函数用，必须自己去改被 import 进去的 namespace 的模块列表：<br><br><div class="highlight"><pre><code class="language-python"><span class="c">#test.py</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">"foo"</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="n">foo</span>
+</code></pre></div><br><div class="highlight"><pre><code class="language-text">#__main__:
+&gt;&gt;&gt; import test
+&gt;&gt;&gt; test()
+foo
+</code></pre></div><br>这样做太过 hacky，请不要这样做。<br><br>当然还有更 hacky 的方法：CPython 判断某 object 是否 callable，是查看其类型之 _typeobject 成员的 tp_call 函数指针是否为 NULL（见 <a href="https://link.zhihu.com/?target=http%3A//hg.python.org/cpython/file/8d4cace71113/Objects/abstract.c%23l2063" class=" wrap external" target="_blank" rel="nofollow noreferrer">cpython: 8d4cace71113 Objects/abstract.c<i class="icon-external"></i></a> ）。那么就可以利用 ctypes 级别修改 module 依赖的 PyTypeObject，使其 tp_call 指针指向有意义的函数，从而让 module 也变得 callable，详见 <a href="https://link.zhihu.com/?target=http%3A//www.slideshare.net/r1chardj0n3s/dont-do-this-24000445" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://www.</span><span class="visible">slideshare.net/r1chardj</span><span class="invisible">0n3s/dont-do-this-24000445</span><span class="ellipsis"></span><i class="icon-external"></i></a> 第70页开始的内容。但是也请不要这样做。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/23185059/answer/23848076">https://www.zhihu.com/question/23185059/answer/23848076</a></p>

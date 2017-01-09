@@ -1,0 +1,7 @@
+---
+title: Java 中接口中方法没有方法体，怎么其实现类就会有了？
+layout: post
+---
+也许你对于 class、interface 与 instance 之间的关系还不是很清楚？      <br><ul><li>Class （类）是一张图纸——比如 F16 战斗机的设计蓝图     <br></li><li>Interface （接口）是一种要求——比如“能发射导弹”     <br></li><li>Instance （实例）是一个具体的东西——比如一架编号为 A123 的 F16</li></ul>  类可以实现接口，比如—— F16 的设计图，是一张能够发射导弹的飞机的设计图      <br> 接口可以用来描述类，比如——这边的这堆飞机设计图都设计了“发射导弹”这个功能     <br>所以，接口可以用来描述实例，比如—— F16 战斗机能发射导弹       <br><br> 现在假设你是个资深飞行员，但不是机械师。也就是说，你知道怎么让飞机发射导弹，虽然你不知道怎么造出一架能发射导弹的飞机。那么，如果你对机械师说，“给我一架能发射导弹的飞机”，你其实并不在乎他给你的究竟是 F15 还是 F16，也不关心这架飞机具体怎么实现”发射导弹“这个功能，只要它能发射导弹就好。       <br><br> 接下来平行类比你的问题：      <br> getElementsByTagName 会返回一个实现 NodeList 接口的实例 n      <br> （相当于机械师给了你一架能发射导弹的飞机）；       <br><br> 你不知道（也不关心）这个实例其实是什么类      <br> （你不认识这架飞机具体是用哪张图纸造出来的）；       <br><br> 但你知道，n 实例有一个 getLength 方法      <br> （你知道这架飞机能发射导弹）；       <br><br> 你输入 n.getLength()     <br>   （你在空中按下按钮）；       <br><br> 你获得了一个数字，比如 42      <br> （一颗导弹果然飞了出去）；       <br><br> 那么，getLength 究竟是怎么实现的呢？很简单：这个对象是有一个类型的，这个类型实现了 NodeList 接口。最简单的可能性：       <br><br> class DummyNodeList implements NodeList {      <br>   publich int getLength(){      <br>     return 42;      <br>   }      <br> }       <br><br> 这个类的任何实例都有一个 getLength 方法，而且会返回 42。现在假设 document.getElementsByTagName 返回的实例就是 DummyNodeList 类的实例，它可以被赋给 n 吗？当然可以，因为它实现了 NodeList 接口。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19890792/answer/13266473">https://www.zhihu.com/question/19890792/answer/13266473</a></p>

@@ -1,0 +1,7 @@
+---
+title: Linux 下C语言编程能否检测出Ctrl+任意字母、Shift+任意字母、Alt+任意字母的组合按键事件? Google了一大圈不得其解。
+layout: post
+---
+印象中 terminal 下面是不可能的，几乎所有终端都只能检测「有按键事件发生了」而不是「Ctlr 按下」、「A 按下」、「A 松开」「Ctrl 松开」这样。你可以通过将 terminal 设定为 non-canonical 来获得一些特殊按键组合所产生的控制字符，不过无法得到任意组合。Vim 之类就是这样做的。<br><br>方案之一是用 GUI 库，比如最基本的 Xlib 提供的 XGrabKey[1]，可以抓取 root window 下面的按键输入。如果你想实现比如按两下右边的 ctrl 出现一个全局提示框之类的功能，大概得用这个。<br><br>方案之二是去监听 /dev/ 下面的键盘事件，而且可以具体到某个键盘，具体我也不很清楚了。<br><br>[1] <a href="https://link.zhihu.com/?target=http%3A//tronche.com/gui/x/xlib/input/XGrabKey.html" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">tronche.com/gui/x/xlib/</span><span class="invisible">input/XGrabKey.html</span><span class="ellipsis"></span><i class="icon-external"></i></a>
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/20644254/answer/15725855">https://www.zhihu.com/question/20644254/answer/15725855</a></p>

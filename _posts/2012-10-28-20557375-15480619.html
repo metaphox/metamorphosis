@@ -1,0 +1,7 @@
+---
+title: 游戏开发中，一般是怎么利用图形处理软件导出动画数据，做出游戏中物体移动和其他动画效果的？引擎的 Draw 函数是怎样的？
+layout: post
+---
+谢邀。我毕业之后就没做过动画了，答这个没底气，不过现在比较常用的动画交换格式应该是 Autodesk 开发的 FBX[1]。iOS 平台上很多 3D 游戏用到的引擎 Unity[2]，以及 Unreal Engine[3] 都可以直接导入 3Ds Max / Maya / Blender 之类做出来的 FBX 格式动画，非常简单。<br><br>至于 draw 函数……据我所知现在很少有需要你自己去操心 draw 函数的引擎了。你在引擎里面放好相机位置就可以，需要写的基本上只有游戏逻辑。<br><br>希望能对你有点帮助。<br><br>[1] <a href="https://link.zhihu.com/?target=http%3A//usa.autodesk.com/fbx/" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">usa.autodesk.com/fbx/</span><span class="invisible"></span><i class="icon-external"></i></a><br>[2] <a href="https://link.zhihu.com/?target=http%3A//docs.unity3d.com/Documentation/Manual/HOWTO-importObject.html" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">docs.unity3d.com/Docume</span><span class="invisible">ntation/Manual/HOWTO-importObject.html</span><span class="ellipsis"></span><i class="icon-external"></i></a><br>[3] <a href="https://link.zhihu.com/?target=http%3A//udn.epicgames.com/Three/FBXPipeline.html" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">udn.epicgames.com/Three</span><span class="invisible">/FBXPipeline.html</span><span class="ellipsis"></span><i class="icon-external"></i></a>
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/20557375/answer/15480619">https://www.zhihu.com/question/20557375/answer/15480619</a></p>

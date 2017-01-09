@@ -1,0 +1,7 @@
+---
+title: 如何保存shell中正则匹配的结果？
+layout: post
+---
+for file in ./a*/data; do scp -qr $file user@host.name:~/${file/\/data/_data}; done;       <br><br> if rootdir is on a remote host, try       <br><br> for file in `ssh user@host.name "ls /rootdir/a*/data"`; do scp -qr user@host.name:${file/:/} ${file/\/data/_data}; done;
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19888200/answer/13259778">https://www.zhihu.com/question/19888200/answer/13259778</a></p>

@@ -1,0 +1,7 @@
+---
+title: 在哪里能够下载到bios提示音的音频文件？ 或者如何自己模拟出来并录制下来。
+layout: post
+---
+请搜索“编程驱动PC喇叭”。不想编程实现的话，一个很简单的办法可以模拟短音：  <br><ol><li>新建一个纯文本文件，按左边的 alt + 小键盘的 007 ，松手。建议使用 Notepad++ 这样的编辑器，这样你可以看到自己输入了一个 [BEL] 字符。可以多输几个。</li><li>存盘为 beep.txt 。</li><li>打开命令行，进入 beep.txt 所在的文件夹，输入 type beep.txt ，如果能听到 PC 喇叭发声，你就成功了。频率也许和 BIOS 发出的不一样，不过 BISO 报警一般只需要知道次数，和频率无关。</li></ol><br> 很遗憾这个声音只能用麦克风之类的东西录下来，它不走声卡。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19910083/answer/13324170">https://www.zhihu.com/question/19910083/answer/13324170</a></p>

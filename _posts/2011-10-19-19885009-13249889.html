@@ -1,0 +1,7 @@
+---
+title: 动态页面301到静态页面怎么写?
+layout: post
+---
+RewriteEngine On      <br> RewriteCond %{QUERY_STRING} ^id=([0-9]+)$      <br> RewriteRule ^site/article/view\.asp$ h-t-t-p://yourdomain.name/site/2011yugao/%1.html? [R=302,L]       <br><br> 需要 mod_rewrite，未经测试，把 h-t-t-p 替换为 http
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19885009/answer/13249889">https://www.zhihu.com/question/19885009/answer/13249889</a></p>

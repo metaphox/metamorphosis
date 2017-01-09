@@ -1,0 +1,7 @@
+---
+title: Python如何输出包含在对象中的中文字符？
+layout: post
+---
+def zhprint(obj):<br>    import re<br>    print re.sub(r"\\u([a-f0-9]{4})", lambda mg: unichr(int(mg.group(1), 16)), obj.__repr__())<br><br><noscript><img src="https://pic1.zhimg.com/4cd04e5b91209bf2a0367fe383e8acd0_b.jpg" data-rawwidth="1067" data-rawheight="464" class="origin_image zh-lightbox-thumb" width="1067" data-original="https://pic1.zhimg.com/4cd04e5b91209bf2a0367fe383e8acd0_r.jpg"></noscript><img src="//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg" data-rawwidth="1067" data-rawheight="464" class="origin_image zh-lightbox-thumb lazy" width="1067" data-original="https://pic1.zhimg.com/4cd04e5b91209bf2a0367fe383e8acd0_r.jpg" data-actualsrc="https://pic1.zhimg.com/4cd04e5b91209bf2a0367fe383e8acd0_b.jpg"><br><br>yeah it's a hack but it works (for most cases)...
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/20413029/answer/15064222">https://www.zhihu.com/question/20413029/answer/15064222</a></p>

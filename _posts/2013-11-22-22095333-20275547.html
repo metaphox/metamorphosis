@@ -1,0 +1,7 @@
+---
+title: python中的pickle问题?
+layout: post
+---
+Pickle 每次序列化生成的字符串有独立头尾，pickle.load() 只会读取一个完整的结果，所以你只需要在 load 一次之后再 load 一次，就能读到第二次序列化的 ['asd', ('ss', 'dd')]。如果不知道文件里有多少 pickle 对象，可以在 while 循环中反复 load 文件对象，直到抛出异常为止。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/22095333/answer/20275547">https://www.zhihu.com/question/22095333/answer/20275547</a></p>

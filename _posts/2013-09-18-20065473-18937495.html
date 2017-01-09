@@ -1,0 +1,10 @@
+---
+title: Python 如何调用上层模块中的函数？
+layout: post
+---
+假设 main.py 中有函数 foo，plugin 模块中有函数 bar ，则在 bar 中:<br><br><div class="highlight"><pre><code class="language-python"><span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">inspect</span>
+    <span class="n">upperframe_foo</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">()</span><span class="o">.</span><span class="n">f_back</span><span class="o">.</span><span class="n">f_locals</span><span class="p">[</span><span class="s">'foo'</span><span class="p">]</span>
+</code></pre></div><br>即可获得 main 中的函数 foo。如图：<br><br><noscript><img src="https://pic2.zhimg.com/3d5d4b89f3c6e622490e5739b31c352d_b.jpg" data-rawwidth="1545" data-rawheight="946" class="origin_image zh-lightbox-thumb" width="1545" data-original="https://pic2.zhimg.com/3d5d4b89f3c6e622490e5739b31c352d_r.jpg"></noscript><img src="//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg" data-rawwidth="1545" data-rawheight="946" class="origin_image zh-lightbox-thumb lazy" width="1545" data-original="https://pic2.zhimg.com/3d5d4b89f3c6e622490e5739b31c352d_r.jpg" data-actualsrc="https://pic2.zhimg.com/3d5d4b89f3c6e622490e5739b31c352d_b.jpg"><br>但请不要这样做。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/20065473/answer/18937495">https://www.zhihu.com/question/20065473/answer/18937495</a></p>

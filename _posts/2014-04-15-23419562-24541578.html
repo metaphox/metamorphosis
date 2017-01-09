@@ -1,0 +1,7 @@
+---
+title: 我们如何知道Objective-C中的@selector会传些什么参数？
+layout: post
+---
+你没办法知道 @selector 选择的方法在调用时会获得什么参数，Objective-C 里面的函数签名就只有函数名而已，参数类型和返回类型都是未知的。<br><br>你举例的 Target-Action[1] 是 Cocoa 中的一个模式，其用意是分离 controller 与实现事务逻辑的 object。在 UIKit 中，addTarget:action:forControlEvents: 这个函数之中的 action 就只能是三种签名之一：不带参数的，带一个参数的，带两个参数的。当 control event 发生时，Cocoa 就会在 target 上调用 action，如果有一个参数，那就传入 controller 本身，如果有两个参数，那就按次序传入 controller 和 event。这一机制并不是在语言层面上实现的，完全只是苹果所规定的 convention。<br><br>[1] <a href="https://link.zhihu.com/?target=https%3A//developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html" class=" wrap external" target="_blank" rel="nofollow noreferrer">Concepts in Objective-C Programming: Target-Action<i class="icon-external"></i></a>
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/23419562/answer/24541578">https://www.zhihu.com/question/23419562/answer/24541578</a></p>

@@ -1,0 +1,7 @@
+---
+title: Mac OS X 用双硬盘时，用第二块硬盘「挂载」一个目录和创建这个目录的「符号链接」从效果上看有什么区别？
+layout: post
+---
+<ol><li>所有设备都会在 /dev/ 下面有个“文件”，可以将其视为该设备的“原始形态”。一块新硬盘插到总线上之后，如果能被系统辨认出来，就会在 /dev/ 下面出现。</li><li>OS X系统会默认将硬盘挂于 /Volumes 下，也就是说，做一个这样的“映射”：<br>/dev/disk1s2 ------  &gt;   /Volumes/Somedisk</li><li>而这并不是你想要的。所以你有两个方案：</li><ol><li>改变这个映射。这需要改 fstab 文件。<br>改 fstab （File System TABle）可以告诉系统说这块（以及所有其他会长期连接到文件系统的实体或虚拟）硬盘你想挂在哪里，也就是“映射到什么路径上”。以 jjgod 的这句<br>/dev/disk1s2 /Users/jjgod/Downloads hfs rw<br>为例，就是“请将 /dev/disk1s2 这个文件，以 hfs 系统、可读可写的方式映射为 /Users/jjgod/Downloads 目录”的意思。</li><li>不改变这个映射，而是建立许多符号链接。<br>比如 ln -s /Volumes/foo ~/Download 就是说，在 ~/ 目录（你的用户目录）下建立一个名叫 Downloads 的快捷方式，一旦有程序访问它，就读取 /Volumes/foo 里的内容。</li></ol><li>两者在效果上区别不大，不过改 fstab 显然要 hardcore 一点。</li></ol>
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19716664/answer/12742919">https://www.zhihu.com/question/19716664/answer/12742919</a></p>

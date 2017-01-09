@@ -1,0 +1,7 @@
+---
+title: Git 有哪些缺点？
+layout: post
+---
+设计方面我觉得没什么可挑剔的。最大的缺点要我说是命令太混乱，非常不直观。<br><blockquote>finally figuring out that git commands are strangely named graph manipulation commands--creating/deleting nodes, moving pointers around </blockquote><a href="https://link.zhihu.com/?target=http%3A//twitter.com/KentBeck/status/42657237986054144" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">twitter.com/KentBeck/st</span><span class="invisible">atus/42657237986054144</span><span class="ellipsis"></span><i class="icon-external"></i></a> <br>比如 git reset，最常见的用途是 undo git commit，但是又不能将它视为 git commit 的逆操作，因为 reset 还分 mixed、soft、hard、merge 和 keep；但 reset 至少还能望文生义猜出一些用途，可到底什么叫做 rebase？一个 commit 对着另一个 commit 喊 all your base are belong to us？想弄清楚 git rebase --onto 得画个图。另外什么叫 cherry-pick？我现在都不完全清楚它到底在做什么。<br><br>当然很可能是我笨，我猜刻薄如 Linus 一定会这么认为。不过我觉得通过恰当合理的命名会让这一史诗级源代码管理工具的学习曲线平缓很多。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/20401926/answer/15031934">https://www.zhihu.com/question/20401926/answer/15031934</a></p>

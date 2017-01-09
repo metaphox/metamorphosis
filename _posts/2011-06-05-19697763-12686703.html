@@ -1,0 +1,7 @@
+---
+title: 有什么英语词汇书是以单纯的词形（不是指词根+词缀）的角度编写的?
+layout: post
+---
+ 这样编写英语词汇书没有什么意义，所以我猜是没有的。不过自己写程序生成一个这样的词表并不难：两个单词之间的差异可以用 Levenshtein Distance (LD) [1] 来计算，这样一来，你所需要的「词汇书」就是将 LD 短的词汇集中排列到一起。所以只需要找一个词汇列表，限定一个 LD 的上界（比如你最多希望出现三个字母不同），重新排序即可。<br><br>[1] <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Levenshtein_distance" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">en.wikipedia.org/wiki/L</span><span class="invisible">evenshtein_distance</span><span class="ellipsis"></span><i class="icon-external"></i></a> 
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19697763/answer/12686703">https://www.zhihu.com/question/19697763/answer/12686703</a></p>

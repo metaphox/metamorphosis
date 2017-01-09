@@ -1,0 +1,7 @@
+---
+title: 为什么 HTTP header 中 Content-Type 这一条目的写法是 charset 在 content 的属性里面？
+layout: post
+---
+http-equiv 这个属性对应 HTTP response headers 里面的项目，它也是因此而得名。其初衷是让不能（比如没有权限）设定服务器 header 的站点可以通过它来告知浏览器一些页面内容的相关信息。而 HTTP header 里面，Content-Type 这一条目的写法就是 "text/html; charset=utf-8"。<br><br><noscript><img src="https://pic1.zhimg.com/3b54815d31e3f9eaffb844b95724aa90_b.jpg" data-rawwidth="973" data-rawheight="370" class="origin_image zh-lightbox-thumb" width="973" data-original="https://pic1.zhimg.com/3b54815d31e3f9eaffb844b95724aa90_r.jpg"></noscript><img src="//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg" data-rawwidth="973" data-rawheight="370" class="origin_image zh-lightbox-thumb lazy" width="973" data-original="https://pic1.zhimg.com/3b54815d31e3f9eaffb844b95724aa90_r.jpg" data-actualsrc="https://pic1.zhimg.com/3b54815d31e3f9eaffb844b95724aa90_b.jpg"><br>参见 <a href="https://link.zhihu.com/?target=http%3A//reference.sitepoint.com/html/meta/http-equiv" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">reference.sitepoint.com</span><span class="invisible">/html/meta/http-equiv</span><span class="ellipsis"></span><i class="icon-external"></i></a>
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/20615748/answer/15651889">https://www.zhihu.com/question/20615748/answer/15651889</a></p>

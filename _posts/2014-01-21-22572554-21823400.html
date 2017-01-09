@@ -1,0 +1,14 @@
+---
+title: chrome最近版本有个“m”，代表什么?
+layout: post
+---
+<div class="highlight"><pre><code class="language-cpp">  <span class="c1">// Return a human readable modifier for the version string, e.g.</span>
+  <span class="c1">// the channel (dev, beta, stable). Returns true if this operation succeeded,</span>
+  <span class="c1">// on success, channel contains one of "", "unknown", "dev" or "beta" (unless</span>
+  <span class="c1">// it is a multi-install product, in which case it will return "m",</span>
+  <span class="c1">// "unknown-m", "dev-m", or "beta-m").</span>
+  <span class="k">static</span> <span class="kt">bool</span> <span class="nf">GetChromeChannelAndModifiers</span><span class="p">(</span><span class="kt">bool</span> <span class="n">system_install</span><span class="p">,</span>
+                                           <span class="n">base</span><span class="o">::</span><span class="n">string16</span><span class="o">*</span> <span class="n">channel</span><span class="p">);</span>
+</code></pre></div>来源：（<a href="https://link.zhihu.com/?target=http%3A//src.chromium.org/svn/trunk/src/chrome/installer/util/google_update_settings.h" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">src.chromium.org/svn/tr</span><span class="invisible">unk/src/chrome/installer/util/google_update_settings.h</span><span class="ellipsis"></span><i class="icon-external"></i></a>）<br><br>multi_install: support installing multiple products at once.<br>来源：（<a href="https://link.zhihu.com/?target=http%3A//www.chromium.org/administrators/configuring-other-preferences" class=" wrap external" target="_blank" rel="nofollow noreferrer">Configuring Other Preferences<i class="icon-external"></i></a>）<br><br>但我不知道「products」确切指什么。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/22572554/answer/21823400">https://www.zhihu.com/question/22572554/answer/21823400</a></p>

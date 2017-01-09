@@ -1,0 +1,7 @@
+---
+title: 为什么 Quora 的 LaTeX 输入那么难用，比 WordPress 还差？在线 LaTeX 究竟有哪些非常难以克服的技术障碍？
+layout: post
+---
+ 请见本版同文，TeX 开发者江疆的答案。以下都是废话。<br><br>==土星人分割线==<br><br>在线 LaTeX ——暂且将话题限于数学公式编辑，LaTeX其实是个完整的排字系统——障碍主要来自两方面：系统太复杂，用户太小众。<br><br><b>系统太复杂</b>：理想世界里，LaTeX 格式书写的文档应该像 SVG 一样被浏览器原生支持，而不是像现在这样，只能先在服务器端生成图片然后传给浏览器。而先在服务器端生成图片然后传给浏览器这个手法无论如何都是效率相当低下的，用户体验不可能好。问题是，考虑到 LaTeX 是 TeX 的一个扩展，amsmath 又是 AMS-LaTeX 的一部分，也就是 LaTeX 的扩展。单单 TeX 系统就从 1978 到 1989 开发了十多年，其自成体系的程度，足以和任何浏览器媲美，遑论整合。<br><br>此外，扩展性和灵活性是 LaTeX 的重要特点，也是它的巨大阻碍，没有 amsmath 会显得不够用，可是，要支持多少扩展才能让所有人觉得够用？由于太过灵活和具备扩展性，很难界定出一个核心 LaTeX 使用集，可以让人说，啊，这样就够了。目前大部分支持 LaTeX 编辑的网站，比如 Quora 或 Wikipedia，都是以能满足公式编辑这个初级功能为考量。<br><br><b>用户太小众</b>：懂 LaTeX 的人远远少于懂 HTML 的人，懂 HTML 的人又远远少于会使用 WYSIWYG 编辑器的人。更不用提会有兴趣和能力去维护一个在线 LaTeX 编辑器项目的程序员更远远少于上述所有人。没有需求就没有完善的动力，所以难用归难用，其实有的用就已经不错了。<br><br>==重拾希望的分割线==<br><br>话说 W3C 有自己的 MathML 标准，有望被浏览器原生支持。虽然我觉得它没有 *TeX 优雅。如果这个标准被广泛支持，或许在线编辑 LaTeX 会容易很多，将 LaTeX 书写的公式转译成 MathML 是甚至可以在客户端实现的事情。<br><br>==委曲求全的分割线==<br><br>一个折衷方案：在比如 <a href="https://link.zhihu.com/?target=http%3A//www.codecogs.com/latex/eqneditor.php" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://www.</span><span class="visible">codecogs.com/latex/eqne</span><span class="invisible">ditor.php</span><span class="ellipsis"></span><i class="icon-external"></i></a> 这样的网站上编辑好公式，将结果以贴图形式贴到 Quora 上。 
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19670968/answer/12592928">https://www.zhihu.com/question/19670968/answer/12592928</a></p>

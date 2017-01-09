@@ -1,0 +1,8 @@
+---
+title: 为什么在 iOS 中为 UIButton 设置字体为 Hiragino Kaku Gothic 会导致基线偏高？
+layout: post
+---
+基线看起来偏高的原因一方面是字体本身下降部（descender）长度不一，另一方面……Storyboard 的确是坨屎。如果坚持要使用 Storyboard，可以用 <a href="https://link.zhihu.com/?target=https%3A//developer.apple.com/fonts/" class=" wrap external" target="_blank" rel="nofollow noreferrer">Fonts - Apple Developer<i class="icon-external"></i></a> 工具来更改下降部高度，方法详见 <a href="https://link.zhihu.com/?target=http%3A//www.andyyardley.com/2012/04/24/custom-ios-fonts-and-how-to-fix-the-vertical-position-problem/" class=" wrap external" target="_blank" rel="nofollow noreferrer">Custom iOS fonts and how to fix the vertical position problem<i class="icon-external"></i></a> 。<br><br>另一方面也可以更改 UIButton 的 contentEdgeInsets，强行将字体向下推出相当于其下降部高度的距离，比如<br><br><div class="highlight"><pre><code class="language-objective-c"><span class="n">myBtn</span><span class="p">.</span><span class="n">contentEdgeInsets</span> <span class="o">=</span> <span class="n">UIEdgeInsetsMake</span><span class="p">(</span><span class="mf">1.8f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.8f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">);</span>
+</code></pre></div><br>原理可参见 <a href="https://link.zhihu.com/?target=http%3A//doing-it-wrong.mikeweller.com/2012/07/youre-doing-it-wrong-2-sizing-labels.html" class=" wrap external" target="_blank" rel="nofollow noreferrer">iOS Development: You're Doing It Wrong: You're Doing It Wrong #2: Sizing labels with -[NSString sizeWithFont:...]<i class="icon-external"></i></a> 。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/21080554/answer/17120019">https://www.zhihu.com/question/21080554/answer/17120019</a></p>

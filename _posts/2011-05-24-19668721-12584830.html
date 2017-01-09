@@ -1,0 +1,7 @@
+---
+title: CSS 怎么处理生僻汉字？
+layout: post
+---
+ 比较生僻的汉字通常只有 Arial Unicode MS[1] 这个字体支持。这其实并不是 CSS 可以「解决」的事情，只能「绕开」。我手头没有这个字体，无法验证，不过我猜想将<br><blockquote>font: 13px/1.5 'Helvetica Neue',Helvetica,Arial,Sans-serif</blockquote><br>改为<br><blockquote>font: 13px/1.5 'Helvetica Neue',Helvetica,'Arial Unicode MS',Sans-serif</blockquote><br>即可。<br><br>更新：<br><br>本版同文说 CSS3 直接调用外部字体理论上可行但是目前并不现实，因为中文字符量大，比如 Arial Unicode MS 有 22M 之巨。「部分传输」这一功能虽然有部分厂商尝试实现，但是效果欠佳[2]。此外冷僻字在这些外部字体中有对应字符的可能性也不高。<br><br>再更新：<br><blockquote>Hiragino Sans GB 就支持这个字符。如果希望保持原来的其他字体设置，可以用类似 font: normal normal normal 13px/1.5 'Helvetica Neue', Helvetica, Arial, STXihei, 'Hiragino Sans GB', sans-serif; 这样的写法。</blockquote><br>鸣谢 @江疆<br><br>[1] <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Arial_Unicode_MS" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">en.wikipedia.org/wiki/A</span><span class="invisible">rial_Unicode_MS</span><span class="ellipsis"></span><i class="icon-external"></i></a><br>[2] <a href="https://link.zhihu.com/?target=http%3A//www.typeisbeautiful.com/2010/05/2363" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://www.</span><span class="visible">typeisbeautiful.com/201</span><span class="invisible">0/05/2363</span><span class="ellipsis"></span><i class="icon-external"></i></a> 
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19668721/answer/12584830">https://www.zhihu.com/question/19668721/answer/12584830</a></p>

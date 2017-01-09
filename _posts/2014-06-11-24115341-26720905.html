@@ -1,0 +1,12 @@
+---
+title: 像下面图片里的像素颜色改变的专业术语是什么，有什么命令行工具吗？
+layout: post
+---
+彩色转黑白的术语是「去色」， 或者 convert to greyscale / monochrome 或者 desaturate，后者是指降低色彩饱和度，降到最低就是灰度照片。<br><br>所有白像素变成红像素可以叫 color replacement 或者 color overlay，两者严格来说也是有区别的，前者是用一种颜色替换另一种颜色，但通常人们实际希望获得的结果是「用一群近似的颜色替换另一群近似的颜色」，比如用深红到浅红替换深黑到灰色，这其实是后者能达到的效果。<br><br>你图中左上到右上算是 desaturate 到纯灰度，右上到左下是增加对比度，左下到右下就算是 color overlay 好了，Photoshop 里可能有四五种方法可以达到这个效果。<br><br>命令行工具的话自然是 Imagemagick （ <a href="https://link.zhihu.com/?target=http%3A//www.imagemagick.org/" class=" wrap external" target="_blank" rel="nofollow noreferrer">ImageMagick: Convert, Edit, Or Compose Bitmap Images<i class="icon-external"></i></a> ）：<br><br>左上到右上：<br><div class="highlight"><pre><code class="language-text">convert -grayscale Rec709Luminance tl.jpg tr.jpg
+#Rec709Luminance 是若干灰度算法的一种，详情请读文档
+</code></pre></div><br>右上到左下：<br><div class="highlight"><pre><code class="language-text">convert -contrast -contrast tr.jpg bl.jpg
+#视效果可以叠加若干次 -contrast 选项
+</code></pre></div><br>左下到右下：<br><div class="highlight"><pre><code class="language-text">convert bl.jpg +level-colors black,red br.jpg
+</code></pre></div><br>保证有效。如果无效，请自己读文档。<br><br>另 Photoshop 可以录制一系列动作做成 droplet 来批量处理文件。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/24115341/answer/26720905">https://www.zhihu.com/question/24115341/answer/26720905</a></p>

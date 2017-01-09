@@ -1,0 +1,7 @@
+---
+title: JavaScript 中 this 是如何工作的？
+layout: post
+---
+ this 永远指向函数运行时所在的对象，而不是函数被创建时所在的对象。<br>匿名函数或不处于任何对象中的函数指向 window 。例：<br><br>1<br>var foo = { bar : function(){ console.log(this === foo); } } <br>foo.bar() 输出 true<br><br>2<br>var foo = { bar : function(){ (function(){ console.log(this); })(); } }<br>foo.bar() 输出 DOMWindow<br><br>3<br>var foo = { bar : { baz : function(qux){ console.log(this === qux); } } }<br>foobar = foo.bar;<br>foobar.baz(foo.bar) 输出 true<br><br>但是⋯⋯<br><br>wtf = foo.bar.baz;<br>wtf(foo.bar) 输出 false<br><br>为什么？因为 wtf 不是在一个对象中被调用的，this 指向 DOMWindow 。验证：<br>console.log(this) 输出 DOMWindow<br>wtf(this) 输出 true<br><br>没明白你说的控制 this 指向是什么意思，this 所指的东西是语言机制的一部分，你控制不了。如果你是问怎么在函数里保留一份其运行时所在对象的 reference，可以用闭包（closure）：<br><br>var foo = {<br>   whoami : "duh i am foo",<br>   bar : function(){<br>       var shit = this;<br>       return function(){<br>            console.log(shit.whoami);<br>            console.log(this);<br>       };<br>   }<br>};<br><br>baz = foo.bar();<br><br>此时 baz 是一个脱离 foo.bar 而存在的函数，但是：<br><br>baz() 会输出 duh i am foo 和 DOMWindow 。 
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19624483/answer/12426658">https://www.zhihu.com/question/19624483/answer/12426658</a></p>

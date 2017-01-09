@@ -1,0 +1,9 @@
+---
+title: Object之prototype问题?
+layout: post
+---
+因为 ECMA-262 第 15.2.3.1 节规定 Object.prototype 是个不可写的属性[1]。<br><div class="highlight"><pre><code class="language-text">Object.getOwnPropertyDescriptor(Object, "prototype")
+</code></pre></div>会得到<br><div class="highlight"><pre><code class="language-text"> {value: Object, writable: false, enumerable: false, configurable: false }
+</code></pre></div><br>[1] <a href="https://link.zhihu.com/?target=http%3A//www.ecma-international.org/ecma-262/5.1/%23sec-15.2.3.1" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://www.</span><span class="visible">ecma-international.org/</span><span class="invisible">ecma-262/5.1/#sec-15.2.3.1</span><span class="ellipsis"></span><i class="icon-external"></i></a>
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/24338980/answer/27472168">https://www.zhihu.com/question/24338980/answer/27472168</a></p>

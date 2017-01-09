@@ -1,0 +1,7 @@
+---
+title: 太费解了. 太费解了.java题.为什么结果不同?
+layout: post
+---
+final block 中的内容永远会执行，唯一绕过它的方法也许是 System.exit() 。为了验证这一点，你可以你在<br><br>++x; <br><br>后面加上<br><br>System.out.println(x);<br><br>，然后运行，会发现 test 方法将会在返回 1 之前输出 2 。所以就不难理解为什么 get 方法会输出 2 了，因为在返回 1 之前，Java 先去执行了 finally block 。既然 finally block 有个 return，try block 里面的 return 就被忽略了。Java 的设计机制就是这样，finally 存在的意义就是收拾烂摊子，所以无论如何都要执行。详见[1]。<br><br>注意在 finally block 中写 return 是非常非常坏的事情，因为一切异常都会因此而忽略掉。<br><br>[1] <a href="https://link.zhihu.com/?target=http%3A//docs.oracle.com/javase/specs/jls/se5.0/html/statements.html%2314.20.2" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">docs.oracle.com/javase/</span><span class="invisible">specs/jls/se5.0/html/statements.html#14.20.2</span><span class="ellipsis"></span><i class="icon-external"></i></a>
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/20122686/answer/14048026">https://www.zhihu.com/question/20122686/answer/14048026</a></p>

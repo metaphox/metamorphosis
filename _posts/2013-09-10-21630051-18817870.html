@@ -1,0 +1,9 @@
+---
+title: linux的ls命令能不能通过加参数同时将文件夹和文件分开并且按时间排序？
+layout: post
+---
+如果你的 Linux 发行版比较新， ls 有 --group-directories-first 这个选项的话：<br><div class="highlight"><pre><code class="language-text">ls -lat --group-directories-first
+</code></pre></div>至少 GNU coreutils 8.21 里面的 ls 是有的。否则可以用<br><div class="highlight"><pre><code class="language-bash">ls -lat <span class="p">|</span> sort -s -k1.1,1.1
+</code></pre></div>长格式（-l）列出所有文件（-a）并以时间排序（-t），然后将输出结果在保留原有顺序的前提下（-s）只根据第栏的第一个字母到第一栏的第一个字母之间的内容（-k1.1,1,1）——也就是该文件的类型——排序。<br><br>OS X 10.8 上的 GNU coreutils 太老，ls -lat | sort -s -k1,1 也可以，不过 -k1.1,1.1 这样写法向下兼容。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/21630051/answer/18817870">https://www.zhihu.com/question/21630051/answer/18817870</a></p>

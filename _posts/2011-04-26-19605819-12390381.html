@@ -1,0 +1,7 @@
+---
+title: 中文输入法为什么会有全角和半角的区别？
+layout: post
+---
+ 「全角」与「半角」两个术语应该都是从日本来的。印刷上纵横比为1:1的字符（块）称为全角，其四、三、二分之一分别称作「四分」、「三分」、「二分」。<br><br>文字处理电子化之后，JIS C 6220 标准将所有片假名编入 ASCII 未用的单字节高位（同时对低位的几个字符做了修改，比如 backslash，这就是为什么早期 Windows 上装日文游戏的时候路径分隔符会变成日元符号）。所有这些符号在早期的点阵显示器上有 8 像素的宽度就可以得到很好的效果了。<br><br>为了装入汉字，编码必须使用两个字节，而显示起来，8 像素捉襟见肘，16 像素是最简单也是最贴合双字节编码的选择。这样一来，英文字符恰好在编码和显示时都是汉字的一半。<br><br>JIS X 4051《日本語文書の組版方法》里面，将全角定义为「汉字一文字的外框」，半角定义为「字宽为全角二分之一的文字之外框」。<br><br>至于为什么全角字符会有英文，我个人猜测是为了竖排，或者汉字必须行列对齐的其他情形。<br><br>详情请参阅 <a href="https://link.zhihu.com/?target=http%3A//ja.wikipedia.org/wiki/%25E5%2585%25A8%25E8%25A7%2592%25E3%2581%25A8%25E5%258D%258A%25E8%25A7%2592" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">ja.wikipedia.org/wiki/%</span><span class="invisible">E5%85%A8%E8%A7%92%E3%81%A8%E5%8D%8A%E8%A7%92</span><span class="ellipsis"></span><i class="icon-external"></i></a> 
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19605819/answer/12390381">https://www.zhihu.com/question/19605819/answer/12390381</a></p>

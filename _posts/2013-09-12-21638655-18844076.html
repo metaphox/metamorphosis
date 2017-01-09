@@ -1,0 +1,7 @@
+---
+title: 为什么页面引用CDN加速的文件很多都不加http:呢？
+layout: post
+---
+因为页面还有可能是 HTTPS 协议的。如果在其中使用 http:// 前缀的 URL，浏览器会报「there are insecure elements on this page」。双斜线可以使该文件以当前协议载入。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/21638655/answer/18844076">https://www.zhihu.com/question/21638655/answer/18844076</a></p>

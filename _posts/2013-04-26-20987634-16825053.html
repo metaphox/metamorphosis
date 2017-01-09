@@ -1,0 +1,17 @@
+---
+title: git的hook机制能否实现修改提交文件的内容？
+layout: post
+---
+pre-commit hook 只是脚本文件，自然可以更改文件内容，比如<br><div class="highlight"><pre><code class="language-bash"><span class="c">#!/bin/sh</span>
+<span class="c"># To enable this hook, rename this file to "pre-commit".</span>
+
+<span class="c"># Redirect output to stderr.</span>
+<span class="nb">exec </span>1&gt;<span class="p">&amp;</span>2
+
+git diff --cached --name-only <span class="p">|</span>
+xargs grep -I -H -c <span class="s1">'yoyoyo'</span> <span class="p">|</span>
+grep 0<span class="nv">$ </span><span class="p">|</span> cut -d<span class="s1">':'</span> -f1 <span class="p">|</span>
+xargs -n1 -I <span class="o">{}</span> bash -c <span class="s1">'echo "yoyoyo" &gt;&gt; "$0" &amp;&amp; git add "$0" '</span> <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div><br>……不过我猜 pre-commit hook 的职责应该是检查 index 的内容是否符合 commit 的条件，而不是用来自动添加内容的吧。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/20987634/answer/16825053">https://www.zhihu.com/question/20987634/answer/16825053</a></p>

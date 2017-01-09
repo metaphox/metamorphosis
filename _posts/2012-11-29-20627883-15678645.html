@@ -1,0 +1,7 @@
+---
+title: Java 中的多态，为什么子类实例能够赋值给父类引用，反之则不行？
+layout: post
+---
+有一次平原君说：「我要一匹马」，公孙龙给他牵来一匹白马，平原君很高兴，赏给他金子。<br><br>后来又有一天，平原君说：「我要一匹白马」，公孙龙给他牵来一匹五花马。平原君震怒，喝令卫士把公孙龙拖出去揍一顿。<br><br>公孙龙哭着求饶说：「WhiteHorse 是 Horse 的 sub class，那 WhiteHorse aHorse = new Horse() 咋不行呢，五花马也是马啊？！」<br><br>平原君怒道：「<br>WhiteHorse aHorse = new Horse();<br>aHorse.runOnSnowWithoutBeingSpotted();<br>编译时过不了！<br><br>WhiteHorse aHorse = (WhiteHorse)(new Horse());<br>aHorse.runOnSnowWithoutBeingSpotted();<br>运行时抛异常！<br><br>给我重重地打！<br>」<br><br>……<br><br>公孙龙常常能胜人之口，却不能服编译器之心，间接地导致赵国在 DuckType 之战中大败于用 Python 的秦国……这些都是后话了。<br><br>———分割线———<br><br>笑话比较拙劣，抱歉。例子未经验证，很可能最后一段在编译时也过不了。中心思想就是，类型 B 所指的那一小块内存其实是个 A，里面并没有 B 应该包含的数据。如果不小心按照 B 规定的方式去访问这些不存在的数据，计算机会生气。其实说「如果B c可指向 A 对编程来说不是更方便吗」也有道理，不过那样一来 Java 的整个静态类型系统就失去意义了。推广来说，凡是要求你在声明变量的时候指定这个变量的类型的语言，基本都不会允许你用 B 去指 A，虽然你可以从集合论或者模拟自然世界的角度去理解它，但这本质上是个语言设计的理念问题。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/20627883/answer/15678645">https://www.zhihu.com/question/20627883/answer/15678645</a></p>

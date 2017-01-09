@@ -1,0 +1,7 @@
+---
+title: $ORACLE_HOME/lib/下的libclntsh.so.10.1到底是个什么神秘文件呢？
+layout: post
+---
+ 从名字上看它是一个客户端用到的共享库：LIBrary, CLieNT, SHared.SharedObject.10.1 <br>这是个二进制文件，没有源代码的话，很难搞清楚它具体有什么用途，而且从这个非常泛泛的命名来看，它可能会做很多杂七杂八的事情。<br><br>需要 relink 可能是因为它在非正常关机的时候被损坏了。relink 是 Oracle 8.1 开始给出的一个修复脚本，all 就是 relink 全部二进制文件。单独修复 libclntsh 应该只需要 relink client 和 / 或 relink client_sharedlib 即可，不过 relink all 显然最保险…… 
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/19807170/answer/13024866">https://www.zhihu.com/question/19807170/answer/13024866</a></p>

@@ -1,0 +1,8 @@
+---
+title: 请问vimium（chrome的插件）是怎么判断当前焦点是否为输入框的？？
+layout: post
+---
+我也好奇过这个问题…… 研究表明 Vimium 监听 document 的 focus 及 blur 事件，并观察该事件的对象是否为「Focusable」：<br><div class="highlight"><pre><code class="language-text">isFocusable = (element) -&gt; isEditable(element) || isEmbed(element)
+</code></pre></div><br>如果该对象 focusable，则进入 insert mode。如果不，则进入 normal mode。另外还有一上来就是处在 focusable 元素中的状况也做了判断。详见 <a href="https://link.zhihu.com/?target=https%3A//github.com/philc/vimium/blob/master/content_scripts/vimium_frontend.coffee%23L461" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">github.com/philc/vimium</span><span class="invisible">/blob/master/content_scripts/vimium_frontend.coffee#L461</span><span class="ellipsis"></span><i class="icon-external"></i></a> 。
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/23410283/answer/24502236">https://www.zhihu.com/question/23410283/answer/24502236</a></p>

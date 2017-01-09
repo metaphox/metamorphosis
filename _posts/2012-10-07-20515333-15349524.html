@@ -1,0 +1,7 @@
+---
+title: 如何在 Vim 中让 shell 命令读取 Vim 变量值？
+layout: post
+---
+实现这个快捷键的功能可以简单地：<br>:%!markdown %:p &gt; %:p:r.html<br>不想让命令输出替换文件内容的话可以<br>:read!markdown %:p &gt; %:p:r.html<br><br>而在 shell 命令中直接使用 Vim 变量值似乎是不可能的，不过有一个思路：<br>let filename = expand('%p')<br>let target_filename = expand('%:p:r').'.html'<br>system("markdown " . shellescape(filename) . " &gt; " . shellescape(targetfilename) )<br>参见<br><a href="https://link.zhihu.com/?target=http%3A//vimdoc.sourceforge.net/htmldoc/eval.html%23system%28%29" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">vimdoc.sourceforge.net/</span><span class="invisible">htmldoc/eval.html#system()</span><span class="ellipsis"></span><i class="icon-external"></i></a>
+<hr>
+原发布于 <a href="https://www.zhihu.com/question/20515333/answer/15349524">https://www.zhihu.com/question/20515333/answer/15349524</a></p>

@@ -1,4 +1,5 @@
-exclude: [resource, public, post, sass, build, test, config.rb, config.ru, Gemfile, Gemfile.lock, readme.md]
-permalink: /post/:title
-destination: public
-
+exclude: [resource, test, Gemfile, Gemfile.lock, readme.md]
+permalink: /post/:title/
+strict_front_matter: true
+sass:
+  style: compressed

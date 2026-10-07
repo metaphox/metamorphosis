@@ -1,4 +1,4 @@
-exclude: [resource, test, Gemfile, Gemfile.lock, readme.md]
+exclude: [resource, test, Gemfile, Gemfile.lock, readme.md, package.json, package-lock.json, node_modules, wrangler.jsonc, "*.log"]
 permalink: /post/:title/
 strict_front_matter: true
 sass:

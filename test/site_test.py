@@ -84,5 +84,9 @@ assert [urlparse(item.findtext("guid")).path for item in items] == [
 assert all(item.findtext("description") for item in items), "RSS content is empty"
 assert (site / "404.html").is_file()
 assert Page(site / "404.html").viewport == homepage.viewport, "Missing 404 mobile viewport"
-assert not any((site / name).exists() for name in ["js", "sass", "resource", "test", "config.ru"])
+assert not any((site / name).exists() for name in [
+    "js", "sass", "resource", "test", "config.ru", "Gemfile", "Gemfile.lock",
+    "package.json", "package-lock.json", "node_modules", "wrangler.jsonc",
+])
+assert not list(site.rglob("*.log")), "Build logs must not be published"
 print(f"Checked {len(expected)} posts, {zhihu_images} Zhihu images, preserved URLs, assets, compiled Sass, and RSS.")

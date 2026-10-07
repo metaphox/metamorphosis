@@ -25,8 +25,42 @@ Preview at <http://localhost:4000>. To generate static files for hosting:
 bundle exec jekyll build
 ```
 
-Deploy the contents of `_site/` to a static web host. No Ruby server is needed
-in production.
+### Cloudflare Workers
+
+`wrangler.jsonc` builds Jekyll in production mode and publishes `_site/` as
+Workers Static Assets for the Worker named `blog` at
+<https://blog.metaphox.com>. No Ruby server or Worker script is needed.
+
+For the connected repository in Cloudflare Workers Builds, use:
+
+- Root directory: repository root
+- Build command: leave empty (Wrangler runs the build)
+- Deploy command: `npx wrangler deploy`
+
+Cloudflare installs the locked npm and Ruby dependencies automatically.
+`.ruby-version` selects Ruby 3.4.7, matching the existing build environment.
+`Gemfile.lock` includes Linux variants for Cloudflare and macOS variants for
+local development; `package-lock.json` pins Wrangler and its dependencies.
+The explicit build command is `bundle exec jekyll build`, with
+`JEKYLL_ENV=production`; do not prefix Ruby's `bundle` command with `npx`.
+
+To validate and deploy locally (Node.js 22 or newer and Ruby 3.2 or newer):
+
+```sh
+bundle install
+npm ci
+npx wrangler deploy --dry-run
+python3 test/site_test.py
+npx wrangler login
+npm run deploy
+```
+
+The `metaphox.com` zone must be active in the deploying Cloudflare account.
+The [custom domain](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/)
+manages DNS and TLS configuration. The existing blog hostname already has a
+Cloudflare-managed DNS record, so no manual DNS change is needed.
+Keep the existing Disqus URLs and RSS GUIDs to preserve comment threads and
+feed item identities.
 
 After building, run `python3 test/site_test.py` to check the archive, URLs,
 assets, and RSS feed.
